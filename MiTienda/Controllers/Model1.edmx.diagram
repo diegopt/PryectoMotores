@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3584a07299264713afad8457f3d2b6cc" Name="Diagram1" ZoomLevel="63">
+        <EntityTypeShape EntityType="ProyectoMotoresModel.Categorias" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoMotoresModel.DatosEnvios" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoMotoresModel.MetodoPago" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoMotoresModel.OrdenCliente" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoMotoresModel.OrdenProducto" Width="1.5" PointX="7.5" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoMotoresModel.Paqueterias" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoMotoresModel.Productos" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ProyectoMotoresModel.Usuarios" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="ProyectoMotoresModel.FK__Productos__id_ca__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoMotoresModel.FK__DatosEnvi__id_us__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoMotoresModel.FK__OrdenClie__id_da__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoMotoresModel.FK__MetodoPag__id_us__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoMotoresModel.FK__OrdenClie__id_pa__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoMotoresModel.FK__OrdenClie__id_us__66603565" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoMotoresModel.FK__OrdenProd__id_Or__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="ProyectoMotoresModel.FK__OrdenProd__id_pr__656C112C" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
