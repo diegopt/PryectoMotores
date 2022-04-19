@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ff00705a17034089b63a1cafc6ce314d" Name="Diagram1">
+        <EntityTypeShape EntityType="contextoTienda.categorias" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="contextoTienda.datosEnvio" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="contextoTienda.Empleado" Width="1.5" PointX="8" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="contextoTienda.metodoPago" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="contextoTienda.ordenCliente" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="contextoTienda.ordenProducto" Width="1.5" PointX="7.5" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="contextoTienda.paqueterias" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="contextoTienda.productos" Width="1.5" PointX="5.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="contextoTienda.Roles" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="contextoTienda.usuarios" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="contextoTienda.FK__productos__id_ca__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="contextoTienda.FK__datosEnvi__id_us__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="contextoTienda.FK__ordenClie__id_da__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="contextoTienda.FK__Empleado__id_rol__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="contextoTienda.FK__metodoPag__id_us__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="contextoTienda.FK__ordenClie__id_pa__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="contextoTienda.FK__ordenClie__id_us__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="contextoTienda.FK__ordenProd__Id_or__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="contextoTienda.FK__ordenProd__id_pr__59063A47" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
