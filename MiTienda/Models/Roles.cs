@@ -20,7 +20,7 @@ namespace MiTienda.Models
             this.Empleado = new HashSet<Empleado>();
         }
     
-        public int id_rol { get; set; }
+        public string id_rol { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
     

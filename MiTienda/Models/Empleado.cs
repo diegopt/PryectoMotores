@@ -18,7 +18,7 @@ namespace MiTienda.Models
         public string nombre { get; set; }
         public string contrasenia { get; set; }
         public string correo { get; set; }
-        public int id_rol { get; set; }
+        public string id_rol { get; set; }
     
         public virtual Roles Roles { get; set; }
     }

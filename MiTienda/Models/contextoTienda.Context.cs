@@ -13,10 +13,10 @@ namespace MiTienda.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MotoresEntities : DbContext
+    public partial class contextoTienda : DbContext
     {
-        public MotoresEntities()
-            : base("name=MotoresEntities")
+        public contextoTienda()
+            : base("name=contextoTienda")
         {
         }
     

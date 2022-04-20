@@ -10,7 +10,7 @@ namespace MiTienda.Controllers
     [Authorize]
     public class UsuariosController : Controller
     {
-        private MotoresEntities db = new MotoresEntities();
+        private contextoTienda db = new contextoTienda();
         // GET: Usuario
         public ActionResult Index(string email)
         {
