@@ -170,8 +170,13 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\datosEnviosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\metodoPagoController.cs" />
+    <Compile Include="Controllers\ordenClienteController.cs" />
+    <Compile Include="Controllers\ordenProductoController.cs" />
+    <Compile Include="Controllers\paqueteriasController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -335,6 +340,31 @@
     <Content Include="Views\Roles\Details.cshtml" />
     <Content Include="Views\Roles\Edit.cshtml" />
     <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\ordenCliente\Create.cshtml" />
+    <Content Include="Views\ordenCliente\Delete.cshtml" />
+    <Content Include="Views\ordenCliente\Details.cshtml" />
+    <Content Include="Views\ordenCliente\Edit.cshtml" />
+    <Content Include="Views\ordenCliente\Index.cshtml" />
+    <Content Include="Views\ordenProducto\Create.cshtml" />
+    <Content Include="Views\ordenProducto\Delete.cshtml" />
+    <Content Include="Views\ordenProducto\Details.cshtml" />
+    <Content Include="Views\ordenProducto\Edit.cshtml" />
+    <Content Include="Views\ordenProducto\Index.cshtml" />
+    <Content Include="Views\paqueterias\Create.cshtml" />
+    <Content Include="Views\paqueterias\Delete.cshtml" />
+    <Content Include="Views\paqueterias\Details.cshtml" />
+    <Content Include="Views\paqueterias\Edit.cshtml" />
+    <Content Include="Views\paqueterias\Index.cshtml" />
+    <Content Include="Views\datosEnvios\Create.cshtml" />
+    <Content Include="Views\datosEnvios\Delete.cshtml" />
+    <Content Include="Views\datosEnvios\Details.cshtml" />
+    <Content Include="Views\datosEnvios\Edit.cshtml" />
+    <Content Include="Views\datosEnvios\Index.cshtml" />
+    <Content Include="Views\metodoPago\Create.cshtml" />
+    <Content Include="Views\metodoPago\Delete.cshtml" />
+    <Content Include="Views\metodoPago\Details.cshtml" />
+    <Content Include="Views\metodoPago\Edit.cshtml" />
+    <Content Include="Views\metodoPago\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,43 @@
+﻿@model MiTienda.Models.ordenProducto
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ordenProducto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ordenCliente.Id_ordenCliente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ordenCliente.Id_ordenCliente)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.productos.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.productos.nombre)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_ordenCliente }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
