@@ -273,6 +273,24 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\carrusel\carrusel1.jpg" />
+    <Content Include="Content\images\carrusel\carrusel2.jpg" />
+    <Content Include="Content\images\carrusel\carrusel3.jpg" />
+    <Content Include="Content\images\carrusel\estilos.css" />
+    <Content Include="Content\images\carrusel\fondo.jpg" />
+    <Content Include="Content\images\estilosTablas.css" />
+    <Content Include="Content\images\motores\alterna1.jpg" />
+    <Content Include="Content\images\motores\alterna2.jpg" />
+    <Content Include="Content\images\motores\alterna3.jpg" />
+    <Content Include="Content\images\motores\alterna4.jpg" />
+    <Content Include="Content\images\motores\alterna5.jpg" />
+    <Content Include="Content\images\motores\alterna6.jpg" />
+    <Content Include="Content\images\motores\continua1.jpg" />
+    <Content Include="Content\images\motores\continua2.jpg" />
+    <Content Include="Content\images\motores\continua3.jpg" />
+    <Content Include="Content\images\motores\continua4.jpg" />
+    <Content Include="Content\images\motores\continua5.jpg" />
+    <Content Include="Content\images\motores\continua6.jpg" />
     <Content Include="Controllers\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

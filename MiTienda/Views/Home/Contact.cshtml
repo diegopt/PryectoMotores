@@ -1,17 +1,91 @@
 ﻿@{
     ViewBag.Title = "Contact";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<div style="height: 150px; background-color:white"></div>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<style type="text/css">
+    .landing {
+        line-height: 1;
+        -webkit-text-size-adjust: none;
+        color: #777;
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 16pt;
+        font-weight: 300;
+        line-height: 1.65em;
+        letter-spacing: -0.015em;
+    }
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    #info {
+        margin: 0 0 2em 0;
+    }
+
+    #quienes {
+        color: #646464;
+        font-weight: 300;
+        line-height: 1em;
+        margin: 0 0 0.5em 0;
+        font-size: 2.25em;
+        line-height: 1.5em;
+        letter-spacing: -0.035em;
+    }
+
+    #banner {
+        background-attachment: scroll,fixed;
+        background-color: #666;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../Content/images/carrusel/fondo.jpg);
+        background-position: top left,center center;
+        background-repeat: repeat,no-repeat;
+        background-size: auto,cover;
+        color: #fff;
+        padding: 12em 0 20em 0;
+        text-align: center;
+    }
+
+        #banner :last-child {
+            margin-bottom: 0;
+        }
+
+        #banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
+            color: #fff;
+        }
+
+        #banner h2 {
+            font-size: 3.5em;
+            line-height: 1em;
+            margin: 0 0 0.5em 0;
+            padding: 0;
+        }
+
+        #banner p {
+            font-size: 1.25em;
+            margin-bottom: 1.75em;
+            text-align: justify;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+</style>
+
+<div class="landing">
+    <div id="page-wrapper">
+        <section id="banner">
+            <h2 id="quienes">CONTACTO</h2>
+            <p id="info">
+                Para mayor informacion y ayuda contactate con nostros a:
+                <br />
+                "motorInc2022@gmail.com"
+            </p>
+            <p>
+                Soporte: jfonsecg@toluca.tecnm.mx
+                <br />
+                Soporte: dportillat@toluca.tecnm.mx
+                <br />
+                Soporte: jcastanog@toluca.tecnm.mx
+                <br />
+                Soporte: rdomingueza@toluca.tecnm.mx
+                <br />
+                Soporte: jmaldonadov@toluca.tecnm.mx
+            </p>
+            <p>Telefono: 722 123 4567</p>
+        </section>
+    </div>
+</div>

@@ -1,31 +1,96 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+<link rel="stylesheet" href="~/Content/images/carrusel/estilos.css">
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<style>
+    .page-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        border: 1px solid black;
+    }
+
+    .product-container {
+        margin: 15px;
+        padding: 2px 16px;
+        position: relative;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0,2);
+        background-color: white;
+    }
+
+        .product-container img {
+            width: 300px;
+        }
+
+    .button-add {
+        font-size: 16px;
+        text-align: center;
+        border-radius: 8px;
+        padding: 10px 20px;
+        background-color: white;
+        color: white;
+        border: 2px solid royalblue;
+        transition-duration: 0.4s;
+        position: absolute;
+        right: 15px;
+        bottom: 10px;
+    }
+</style>
+
+<div style="height: 150px; background-color:white"></div>
+
+<div class="slide">
+    <div class="slide-inner">
+        <input class="slide-open" type="radio" id="slide-1"
+               name="slide" aria-hidden="true" hidden="" checked="checked">
+        <div class="slide-item">
+            <img src="~/Content/images/carrusel/carrusel1.jpg">
+        </div>
+        <input class="slide-open" type="radio" id="slide-2"
+               name="slide" aria-hidden="true" hidden="">
+        <div class="slide-item">
+            <img src="~/Content/images/carrusel/carrusel2.jpg">
+        </div>
+        <input class="slide-open" type="radio" id="slide-3"
+               name="slide" aria-hidden="true" hidden="">
+        <div class="slide-item">
+            <img src="~/Content/images/carrusel/carrusel3.jpg">
+        </div>
+        <label for="slide-3" class="slide-control prev control-1">‹</label>
+        <label for="slide-2" class="slide-control next control-1">›</label>
+        <label for="slide-1" class="slide-control prev control-2">‹</label>
+        <label for="slide-3" class="slide-control next control-2">›</label>
+        <label for="slide-2" class="slide-control prev control-3">‹</label>
+        <label for="slide-1" class="slide-control next control-3">›</label>
+        <ol class="slide-indicador">
+            <li>
+                <label for="slide-1" class="slide-circulo">•</label>
+            </li>
+            <li>
+                <label for="slide-2" class="slide-circulo">•</label>
+            </li>
+            <li>
+                <label for="slide-3" class="slide-circulo">•</label>
+            </li>
+        </ol>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<h2>Seleccione una Categoria</h2>
+
+<div class="page-content">
+
+    <div class="product-container">
+        <h3>Corriente Alterna</h3>
+        <img src="~/Content/images/motores/alterna6.jpg" />
+        <button class="button-add">@Html.ActionLink("Ir", "prodCategoria", "Catalogo", new { idCat = 1 }, null)</button>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <div class="product-container">
+        <h3>Corriente Continua</h3>
+        <img src="~/Content/images/motores/continua1.jpg" />
+        <button class="button-add">@Html.ActionLink("Ir", "prodCategoria", "Catalogo", new { idCat = 2 }, null)</button>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+
 </div>

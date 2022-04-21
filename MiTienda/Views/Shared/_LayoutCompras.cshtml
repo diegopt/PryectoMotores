@@ -1,45 +1,136 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <style>
+        .tnavbar {
+            overflow: hidden;
+            background-color: royalblue;
+            height: 120%;
+            display: flex;
+            justify-content: center;
+        }
+
+        #motor {
+            margin-left: 20%;
+            font-weight: bold;
+            color: white;
+            font-size: 500%;
+        }
+
+        #buscador {
+            margin-left: 120%;
+            margin-top: 20%;
+            background-color: forestgreen;
+            display: flex;
+            justify-content: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .contenedor {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #aaa;
+            padding: 10px;
+            width: 300px;
+            margin-left: 420px;
+        }
+
+        .input-contenedor {
+            margin-top: 20px;
+        }
+    </style>
+
 </head>
 <body>
+
     <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+
+        <div class="tnavbar">
+            <h1 id="motor">Motor - Inc</h1>
+            <div class="search-container">
+                <form id="buscador" action="#">
+
+                    @using (Html.BeginForm("BuscaProd", "Catalogo", FormMethod.Post, new { @class = "form-inline" }))
+                    {
+                        <input type="text" placeholder="Buscar.." name="nomBuscar" id="nomBuscar">
+                        <button type="submit" value="submit" class="btn btn-primary"><i class="fa fa-fw fa-search"></i></button>
+                    }
+
+                </form>
+            </div>
+        </div>
+
+        <div style="height: 10px; background-color:white"></div>
+
+        <div class="container" style="top">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
+
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" hef="#" data-toggle="dropdown">Categorías<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Corriente Alterna", "prodCategoria", "Catalogo", new { idCat = 1 }, null)</li>
+                            <li>@Html.ActionLink("Corriente Continua", "prodCategoria", "Catalogo", new { idCat = 2 }, null)</li>
+                            <li>@Html.ActionLink("Agregar", "Create", "Categorias", null, new { id = "add" })</li>
+                            <li>@Html.ActionLink("Actualizar", "Edit", "Categorias", null, new { id = "edit" })</li>
+                            <li>@Html.ActionLink("Buscar", "Details", "Categorias", null, new { id = "find" })</li>
+                            <li>@Html.ActionLink("Eliminar", "Delete", "Categorias", null, new { id = "delete" })</li>
+                            <li>@Html.ActionLink("Ver todas", "Index", "Categorias", null, new { id = "list" })</li>
+
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" hef="#" data-toggle="dropdown">Productos<span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Productos", "prodCompletos", "Catalogo")</li>
+                            <li>@Html.ActionLink("Agregar", "Create", "Productos", null, new { id = "add" })</li>
+                            <li>@Html.ActionLink("Actualizar", "Edit", "Productos", null, new { id = "edit" })</li>
+                            <li>@Html.ActionLink("Buscar", "Details", "Productos", null, new { id = "find" })</li>
+                            <li>@Html.ActionLink("Eliminar", "Delete", "Productos", null, new { id = "delete" })</li>
+                            <li>@Html.ActionLink("Ver todas", "Index", "Productos", null, new { id = "list" })</li>
+                        </ul>
+                    </li>
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
+
         </div>
     </div>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p>&copy; @DateTime.Now.Year - Motor-Inc ASP.NET</p>
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
 </html>
