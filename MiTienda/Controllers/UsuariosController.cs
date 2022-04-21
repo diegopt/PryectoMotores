@@ -51,11 +51,11 @@ namespace MiTienda.Controllers
 
                 }
 
-                if (rol == "admin")
+                if (rol == "administrador")
                 {
                     return RedirectToAction("Index", "Administrador");
                 }
-                if (rol == "cmprs")
+                if (rol == "comprador")
                 {
                     return RedirectToAction("Index", "Compras");
                 }
@@ -63,7 +63,7 @@ namespace MiTienda.Controllers
                 {
                     return RedirectToAction("Index", "Home");
                 }
-                if (rol == "almcn")
+                if (rol == "almacen")
                 {
                     return RedirectToAction("Index", "Almacen");
                 }

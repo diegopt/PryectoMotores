@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\categoriasController.cs" />
     <Compile Include="Controllers\datosEnviosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -365,6 +366,11 @@
     <Content Include="Views\metodoPago\Details.cshtml" />
     <Content Include="Views\metodoPago\Edit.cshtml" />
     <Content Include="Views\metodoPago\Index.cshtml" />
+    <Content Include="Views\categorias\Create.cshtml" />
+    <Content Include="Views\categorias\Delete.cshtml" />
+    <Content Include="Views\categorias\Details.cshtml" />
+    <Content Include="Views\categorias\Edit.cshtml" />
+    <Content Include="Views\categorias\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
