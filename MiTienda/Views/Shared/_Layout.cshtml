@@ -10,43 +10,11 @@
     @Scripts.Render("~/bundles/modernizr")
 
     <style>
-        .tnavbar {
-            overflow: hidden;
-            background-color: royalblue;
-            height: 120%;
-            display: flex;
-            justify-content: center;
-        }
 
-        #motor {
-            margin-left: 35%;
+        h1 {
             font-weight: bold;
             color: white;
             font-size: 500%;
-        }
-
-        #buscador {
-            margin-top: 3%;
-            margin-left: 15%;
-            display: flex;
-        }
-
-        h2 {
-            text-align: center;
-        }
-
-        .contenedor {
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #aaa;
-            padding: 10px;
-            width: 300px;
-            margin-left: 420px;
-        }
-
-        .input-contenedor {
-            margin-top: 20px;
         }
     </style>
 
@@ -55,22 +23,20 @@
 
     <div class="navbar navbar-inverse navbar-fixed-top">
 
-        <div class="tnavbar">
-            <h1 id="motor">Motor - Inc</h1>
-
-            <div class="search-container" id="buscador">
-                @using (Html.BeginForm("BuscaProd", "Catalogo", FormMethod.Post, new { @class = "form-inline" }))
-                {
-                    <input class="form-control mr-sm-2" type="text" placeholder="Buscar.." name="nomBuscar" id="nomBuscar">
-                    <button class="btn btn-primary" type="submit" value="submit"><i class="fa fa-fw fa-search"></i></button>
-                }
-
+        <div class="tnavbar bg-primary row text-center">
+            <h1 id="motor" class="col-lg-offset-2 col-lg-5">Motor - Inc</h1>
+            <div class="search-container col-lg-offset-1 col-lg-4 text-center">
+                <form id="buscador" action="#" style="margin-top:25px;">
+                    @using (Html.BeginForm("BuscaProd", "Catalogo", FormMethod.Post, new { @class = "form-inline" }))
+                    {
+                        <input  type="text" placeholder="Buscar.." name="nomBuscar" id="nomBuscar">
+                        <button class="btn btn-primary" type="submit" value="submit"><i class="fa fa-fw fa-search"></i></button>
+                    }
+                </form>
             </div>
         </div>
 
-        <div style="height: 10px; background-color:white"></div>
-
-        <div class="container" style="top">
+        <div class="container" >
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
