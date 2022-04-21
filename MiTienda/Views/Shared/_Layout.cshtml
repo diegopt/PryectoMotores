@@ -10,11 +10,15 @@
     @Scripts.Render("~/bundles/modernizr")
 
     <style>
-
         h1 {
             font-weight: bold;
             color: white;
             font-size: 500%;
+        }
+        #buscador {
+            margin-top: 3%;
+            margin-left: 1%;
+            display: flex;
         }
     </style>
 
@@ -23,13 +27,13 @@
 
     <div class="navbar navbar-inverse navbar-fixed-top">
 
-        <div class="tnavbar bg-primary row text-center">
+        <div class="tnavbar bg-primary row text-center" style="background-color:royalblue">
             <h1 id="motor" class="col-lg-offset-2 col-lg-5">Motor - Inc</h1>
             <div class="search-container col-lg-offset-1 col-lg-4 text-center">
                 <form id="buscador" action="#" style="margin-top:25px;">
                     @using (Html.BeginForm("BuscaProd", "Catalogo", FormMethod.Post, new { @class = "form-inline" }))
                     {
-                        <input  type="text" placeholder="Buscar.." name="nomBuscar" id="nomBuscar">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Buscar.." name="nomBuscar" id="nomBuscar" style="width:auto">
                         <button class="btn btn-primary" type="submit" value="submit"><i class="fa fa-fw fa-search"></i></button>
                     }
                 </form>
