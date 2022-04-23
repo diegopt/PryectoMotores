@@ -1,35 +1,42 @@
 ﻿@model MiTienda.Models.Roles
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles del Rol";
     Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
 }
 <div style="height: 150px; background-color:white"></div>
-<h2>Details</h2>
+<div class="row">
+    <h2 class="col-md-10" style="text-align:left">Detalles del Rol con ID @Model.id_rol</h2>
+    <a href="/Roles/Edit/@Model.id_rol" class="btn col-md-1" style="margin-top: 15px; margin-bottom:20px;">
+        <button style="font-size:17px; background-color:black; color:white; border-radius: 44px;">
+            <i class="fa fa-fw fa-edit"></i>
+        </button>
+    </a>
+    <a href="/Roles" class="btn col-md-1" style="margin-top: 15px; margin-bottom:20px;">
+        <button style="font-size:17px; background-color:black; color:white; border-radius: 44px;">
+            <i class="fa fa-fw fa-arrow-left"></i>
+        </button>
+    </a>
+</div>
+<hr />
 
 <div>
-    <h4>Roles</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.nombre)
+            <p style="font-size:24px">Nombre: </p>
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.nombre)
+            <p style="font-size:22px">@Model.nombre</p>
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.descripcion)
+            <p style="font-size:24px">Descripción: </p>
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.descripcion)
+            <p style="font-size:22px">@Model.descripcion</p>
         </dd>
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id_rol }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

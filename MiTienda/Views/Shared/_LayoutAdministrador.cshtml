@@ -19,7 +19,7 @@
         }
 
         #motor {
-            margin-left: 35%;
+            text-align: center;
             font-weight: bold;
             color: white;
             font-size: 500%;
@@ -55,17 +55,11 @@
 
     <div class="navbar navbar-inverse navbar-fixed-top">
 
-        <div class="tnavbar">
+        <div class="container-fluid" style="background-color:royalblue">
             <h1 id="motor">Motor - Inc</h1>
+            <hr />
+            <h3 style="color:white; text-align:center">ADMINISTRADOR</h3>
 
-            <div class="search-container" id="buscador">
-                @using (Html.BeginForm("BuscaProd", "Catalogo", FormMethod.Post, new { @class = "form-inline" }))
-                {
-                    <input class="form-control mr-sm-2" type="text" placeholder="Buscar.." name="nomBuscar" id="nomBuscar">
-                    <button class="btn btn-primary" type="submit" value="submit"><i class="fa fa-fw fa-search"></i></button>
-                }
-
-            </div>
         </div>
 
         <div style="height: 10px; background-color:white"></div>
@@ -80,26 +74,23 @@
             </div>
 
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                <ul class="nav navbar-header">
+                    
 
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" role="button" aria-expanded="false" hef="#" data-toggle="dropdown">Categorías<span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>@Html.ActionLink("Corriente Alterna", "prodCategoria", "Catalogo", new { idCat = 1 }, null)</li>
-                            <li>@Html.ActionLink("Corriente Continua", "prodCategoria", "Catalogo", new { idCat = 2 }, null)</li>
-                        </ul>
-                    </li>
-                    <li>@Html.ActionLink("Productos", "prodCompletos", "Catalogo")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li style="font-size:150%; color:white">@Html.ActionLink("Empleados", "Index", "Administrador")</li>
+                    <li style="font-size:150%; color:white">@Html.ActionLink("Roles", "Index", "Roles")</li>
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
 
         </div>
+    
     </div>
-
+    <br />
+    <br />
     <div class="container body-content">
         @RenderBody()
         <hr />

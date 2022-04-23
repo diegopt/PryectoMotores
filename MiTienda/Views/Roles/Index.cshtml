@@ -1,40 +1,68 @@
 ﻿@model IEnumerable<MiTienda.Models.Roles>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lista de Roles";
     Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
 }
 <div style="height: 150px; background-color:white"></div>
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.descripcion)
-        </th>
-        <th></th>
-    </tr>
+<div class="row">
+    <h2 class="col-md-10" style="text-align:left">Lista de Roles</h2>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.descripcion)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id_rol }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id_rol }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id_rol })
-        </td>
-    </tr>
-}
+    <a href="/Roles/Create" class="btn col-md-2">
+        <button style="margin-top: 20px; font-size:25px; margin-bottom:10px; background-color:black; color:white; border-radius: 44px;">
+            <i class="fa fa-fw fa-plus"></i>
+        </button>
+    </a>
 
-</table>
+</div>
+    <table class="table table-striped">
+        <tr style="background-color: black; color:white">
+            <th>
+                Info
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Descripción
+            </th>
+            <th>
+                Editar | Eliminar
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href="/Roles/Details/@item.id_rol">
+                        <button style="font-size:15px; background-color:black; color:white; border-radius: 44px;">
+                            <i class="fa fa-fw fa-info"></i>
+                        </button>
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
+                <td>
+                    <div class="row" style="padding-left:15px">
+                        <a href="/Roles/Edit/@item.id_rol">
+                            <button style="font-size:15px; background-color:black; color:white; border-radius: 44px;">
+                                <i class="fa fa-fw fa-edit"></i>
+                            </button>
+                        </a>
+                        <a href="/Roles/Delete/@item.id_rol">
+                            <button style="font-size:15px; background-color:black; color:white; border-radius: 44px;">
+                                <i class="fa fa-fw fa-trash"></i>
+                            </button>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+
+    </table>
