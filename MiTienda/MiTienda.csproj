@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CarroController.cs" />
     <Compile Include="Controllers\CatalogoController.cs" />
     <Compile Include="Controllers\categoriasController.cs" />
     <Compile Include="Controllers\datosEnviosController.cs" />
@@ -178,6 +179,7 @@
     <Compile Include="Controllers\metodoPagoController.cs" />
     <Compile Include="Controllers\ordenClienteController.cs" />
     <Compile Include="Controllers\ordenProductoController.cs" />
+    <Compile Include="Controllers\PagoController.cs" />
     <Compile Include="Controllers\paqueteriasController.cs" />
     <Compile Include="Controllers\productosController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
@@ -212,6 +214,7 @@
       <DependentUpon>contextoTienda.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Item.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\metodoPago.cs">
       <DependentUpon>contextoTienda.tt</DependentUpon>
@@ -225,6 +228,7 @@
     <Compile Include="Models\paqueterias.cs">
       <DependentUpon>contextoTienda.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProdCarro.cs" />
     <Compile Include="Models\productos.cs">
       <DependentUpon>contextoTienda.tt</DependentUpon>
     </Compile>
@@ -381,9 +385,12 @@
     <Content Include="Views\Catalogo\BuscaProd.cshtml" />
     <Content Include="Views\Catalogo\prodCategoria.cshtml" />
     <Content Include="Views\Catalogo\prodCompletos.cshtml" />
+    <Content Include="Views\Carro\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Pago\" />
+    <Folder Include="Views\ProdCarro\" />
     <Folder Include="Views\Usuarios\" />
   </ItemGroup>
   <ItemGroup>
