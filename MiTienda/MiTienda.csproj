@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CatalogoController.cs" />
     <Compile Include="Controllers\categoriasController.cs" />
     <Compile Include="Controllers\datosEnviosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -178,6 +179,7 @@
     <Compile Include="Controllers\ordenClienteController.cs" />
     <Compile Include="Controllers\ordenProductoController.cs" />
     <Compile Include="Controllers\paqueteriasController.cs" />
+    <Compile Include="Controllers\productosController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -371,6 +373,14 @@
     <Content Include="Views\categorias\Details.cshtml" />
     <Content Include="Views\categorias\Edit.cshtml" />
     <Content Include="Views\categorias\Index.cshtml" />
+    <Content Include="Views\productos\Create.cshtml" />
+    <Content Include="Views\productos\Delete.cshtml" />
+    <Content Include="Views\productos\Details.cshtml" />
+    <Content Include="Views\productos\Edit.cshtml" />
+    <Content Include="Views\productos\Index.cshtml" />
+    <Content Include="Views\Catalogo\BuscaProd.cshtml" />
+    <Content Include="Views\Catalogo\prodCategoria.cshtml" />
+    <Content Include="Views\Catalogo\prodCompletos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
