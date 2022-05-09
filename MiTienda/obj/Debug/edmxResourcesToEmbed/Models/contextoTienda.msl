@@ -4,125 +4,125 @@
     <EntitySetMapping Name="categorias">
       <EntityTypeMapping TypeName="MotoresModel.categorias">
         <MappingFragment StoreEntitySet="categorias">
-          <ScalarProperty Name="Id_categoria" ColumnName="Id_categoria" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Id_categoria" ColumnName="Id_categoria" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clientes">
+      <EntityTypeMapping TypeName="MotoresModel.clientes">
+        <MappingFragment StoreEntitySet="clientes">
+          <ScalarProperty Name="rol" ColumnName="rol" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="rfc" ColumnName="rfc" />
+          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
+          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="apellido_m" ColumnName="apellido_m" />
+          <ScalarProperty Name="apellido_p" ColumnName="apellido_p" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Id_cliente" ColumnName="Id_cliente" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="datosEnvio">
       <EntityTypeMapping TypeName="MotoresModel.datosEnvio">
         <MappingFragment StoreEntitySet="datosEnvio">
-          <ScalarProperty Name="Id_datosEnvio" ColumnName="Id_datosEnvio" />
-          <ScalarProperty Name="calle" ColumnName="calle" />
-          <ScalarProperty Name="colonia" ColumnName="colonia" />
-          <ScalarProperty Name="estado" ColumnName="estado" />
-          <ScalarProperty Name="municipio" ColumnName="municipio" />
-          <ScalarProperty Name="num_exterior" ColumnName="num_exterior" />
-          <ScalarProperty Name="num_interior" ColumnName="num_interior" />
-          <ScalarProperty Name="cp" ColumnName="cp" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
           <ScalarProperty Name="telefono" ColumnName="telefono" />
-          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="cp" ColumnName="cp" />
+          <ScalarProperty Name="num_interior" ColumnName="num_interior" />
+          <ScalarProperty Name="num_exterior" ColumnName="num_exterior" />
+          <ScalarProperty Name="municipio" ColumnName="municipio" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="colonia" ColumnName="colonia" />
+          <ScalarProperty Name="calle" ColumnName="calle" />
+          <ScalarProperty Name="Id_datosEnvio" ColumnName="Id_datosEnvio" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Empleado">
       <EntityTypeMapping TypeName="MotoresModel.Empleado">
         <MappingFragment StoreEntitySet="Empleado">
-          <ScalarProperty Name="id_emp" ColumnName="id_emp" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
-          <ScalarProperty Name="correo" ColumnName="correo" />
           <ScalarProperty Name="id_rol" ColumnName="id_rol" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="id_emp" ColumnName="id_emp" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="metodoPago">
       <EntityTypeMapping TypeName="MotoresModel.metodoPago">
         <MappingFragment StoreEntitySet="metodoPago">
-          <ScalarProperty Name="Id_pago" ColumnName="Id_pago" />
-          <ScalarProperty Name="numeracion" ColumnName="numeracion" />
-          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
           <ScalarProperty Name="cvv" ColumnName="cvv" />
-          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="numeracion" ColumnName="numeracion" />
+          <ScalarProperty Name="Id_pago" ColumnName="Id_pago" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ordenCliente">
       <EntityTypeMapping TypeName="MotoresModel.ordenCliente">
         <MappingFragment StoreEntitySet="ordenCliente">
-          <ScalarProperty Name="Id_ordenCliente" ColumnName="Id_ordenCliente" />
-          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
-          <ScalarProperty Name="num_confirmacion" ColumnName="num_confirmacion" />
-          <ScalarProperty Name="total" ColumnName="total" />
-          <ScalarProperty Name="num_guia" ColumnName="num_guia" />
-          <ScalarProperty Name="fecha_envio" ColumnName="fecha_envio" />
-          <ScalarProperty Name="fecha_entrega" ColumnName="fecha_entrega" />
-          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
-          <ScalarProperty Name="id_datosEnvio" ColumnName="id_datosEnvio" />
           <ScalarProperty Name="id_paqueteria" ColumnName="id_paqueteria" />
+          <ScalarProperty Name="id_datosEnvio" ColumnName="id_datosEnvio" />
+          <ScalarProperty Name="id_cliente" ColumnName="id_cliente" />
+          <ScalarProperty Name="fecha_entrega" ColumnName="fecha_entrega" />
+          <ScalarProperty Name="fecha_envio" ColumnName="fecha_envio" />
+          <ScalarProperty Name="num_guia" ColumnName="num_guia" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="num_confirmacion" ColumnName="num_confirmacion" />
+          <ScalarProperty Name="fecha_creacion" ColumnName="fecha_creacion" />
+          <ScalarProperty Name="Id_ordenCliente" ColumnName="Id_ordenCliente" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ordenProducto">
       <EntityTypeMapping TypeName="MotoresModel.ordenProducto">
         <MappingFragment StoreEntitySet="ordenProducto">
-          <ScalarProperty Name="Id_ordenCliente" ColumnName="Id_ordenCliente" />
-          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
           <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="id_producto" ColumnName="id_producto" />
+          <ScalarProperty Name="Id_ordenCliente" ColumnName="Id_ordenCliente" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="paqueterias">
       <EntityTypeMapping TypeName="MotoresModel.paqueterias">
         <MappingFragment StoreEntitySet="paqueterias">
-          <ScalarProperty Name="Id_paqueteria" ColumnName="Id_paqueteria" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="rfc" ColumnName="rfc" />
-          <ScalarProperty Name="telefono" ColumnName="telefono" />
-          <ScalarProperty Name="web" ColumnName="web" />
-          <ScalarProperty Name="direccion" ColumnName="direccion" />
           <ScalarProperty Name="telContacto" ColumnName="telContacto" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="web" ColumnName="web" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="rfc" ColumnName="rfc" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Id_paqueteria" ColumnName="Id_paqueteria" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="productos">
       <EntityTypeMapping TypeName="MotoresModel.productos">
         <MappingFragment StoreEntitySet="productos">
-          <ScalarProperty Name="Id_producto" ColumnName="Id_producto" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-          <ScalarProperty Name="precio" ColumnName="precio" />
-          <ScalarProperty Name="ult_actualizacion" ColumnName="ult_actualizacion" />
-          <ScalarProperty Name="imagen" ColumnName="imagen" />
-          <ScalarProperty Name="existencia" ColumnName="existencia" />
-          <ScalarProperty Name="stock" ColumnName="stock" />
           <ScalarProperty Name="id_categoria" ColumnName="id_categoria" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="existencia" ColumnName="existencia" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="ult_actualizacion" ColumnName="ult_actualizacion" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Id_producto" ColumnName="Id_producto" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Roles">
       <EntityTypeMapping TypeName="MotoresModel.Roles">
         <MappingFragment StoreEntitySet="Roles">
-          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
-          <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="descripcion" ColumnName="descripcion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="usuarios">
-      <EntityTypeMapping TypeName="MotoresModel.usuarios">
-        <MappingFragment StoreEntitySet="usuarios">
-          <ScalarProperty Name="Id_usuario" ColumnName="Id_usuario" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
-          <ScalarProperty Name="apellido_p" ColumnName="apellido_p" />
-          <ScalarProperty Name="apellido_m" ColumnName="apellido_m" />
-          <ScalarProperty Name="correo" ColumnName="correo" />
-          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
-          <ScalarProperty Name="fecha_nacimiento" ColumnName="fecha_nacimiento" />
-          <ScalarProperty Name="rfc" ColumnName="rfc" />
-          <ScalarProperty Name="telefono" ColumnName="telefono" />
-          <ScalarProperty Name="rol" ColumnName="rol" />
+          <ScalarProperty Name="id_rol" ColumnName="id_rol" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

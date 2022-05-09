@@ -21,13 +21,13 @@ namespace MiTienda.Models
         public Nullable<int> num_guia { get; set; }
         public Nullable<System.DateTime> fecha_envio { get; set; }
         public Nullable<System.DateTime> fecha_entrega { get; set; }
-        public int id_usuario { get; set; }
+        public int id_cliente { get; set; }
         public int id_datosEnvio { get; set; }
         public int id_paqueteria { get; set; }
     
+        public virtual clientes clientes { get; set; }
         public virtual datosEnvio datosEnvio { get; set; }
         public virtual paqueterias paqueterias { get; set; }
-        public virtual usuarios usuarios { get; set; }
         public virtual ordenProducto ordenProducto { get; set; }
     }
 }

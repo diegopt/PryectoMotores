@@ -18,8 +18,8 @@ namespace MiTienda.Models
         public Nullable<int> numeracion { get; set; }
         public Nullable<System.DateTime> fecha { get; set; }
         public Nullable<int> cvv { get; set; }
-        public int id_usuario { get; set; }
+        public int id_cliente { get; set; }
     
-        public virtual usuarios usuarios { get; set; }
+        public virtual clientes clientes { get; set; }
     }
 }

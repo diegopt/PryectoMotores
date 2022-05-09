@@ -29,9 +29,9 @@ namespace MiTienda.Models
         public string num_interior { get; set; }
         public string cp { get; set; }
         public Nullable<int> telefono { get; set; }
-        public int id_usuario { get; set; }
+        public int id_cliente { get; set; }
     
-        public virtual usuarios usuarios { get; set; }
+        public virtual clientes clientes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ordenCliente> ordenCliente { get; set; }
     }

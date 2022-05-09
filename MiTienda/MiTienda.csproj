@@ -173,7 +173,8 @@
     <Compile Include="Controllers\CarroController.cs" />
     <Compile Include="Controllers\CatalogoController.cs" />
     <Compile Include="Controllers\categoriasController.cs" />
-    <Compile Include="Controllers\datosEnviosController.cs" />
+    <Compile Include="Controllers\clientesController.cs" />
+    <Compile Include="Controllers\datosEnvioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\metodoPagoController.cs" />
@@ -190,6 +191,9 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Controllers\AdministradorController.cs" />
     <Compile Include="Models\categorias.cs">
+      <DependentUpon>contextoTienda.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\clientes.cs">
       <DependentUpon>contextoTienda.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\contextoTienda.Context.cs">
@@ -233,9 +237,6 @@
       <DependentUpon>contextoTienda.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Roles.cs">
-      <DependentUpon>contextoTienda.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\usuarios.cs">
       <DependentUpon>contextoTienda.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -347,11 +348,6 @@
     <Content Include="Views\Roles\Details.cshtml" />
     <Content Include="Views\Roles\Edit.cshtml" />
     <Content Include="Views\Roles\Index.cshtml" />
-    <Content Include="Views\ordenCliente\Create.cshtml" />
-    <Content Include="Views\ordenCliente\Delete.cshtml" />
-    <Content Include="Views\ordenCliente\Details.cshtml" />
-    <Content Include="Views\ordenCliente\Edit.cshtml" />
-    <Content Include="Views\ordenCliente\Index.cshtml" />
     <Content Include="Views\ordenProducto\Create.cshtml" />
     <Content Include="Views\ordenProducto\Delete.cshtml" />
     <Content Include="Views\ordenProducto\Details.cshtml" />
@@ -362,16 +358,6 @@
     <Content Include="Views\paqueterias\Details.cshtml" />
     <Content Include="Views\paqueterias\Edit.cshtml" />
     <Content Include="Views\paqueterias\Index.cshtml" />
-    <Content Include="Views\datosEnvios\Create.cshtml" />
-    <Content Include="Views\datosEnvios\Delete.cshtml" />
-    <Content Include="Views\datosEnvios\Details.cshtml" />
-    <Content Include="Views\datosEnvios\Edit.cshtml" />
-    <Content Include="Views\datosEnvios\Index.cshtml" />
-    <Content Include="Views\metodoPago\Create.cshtml" />
-    <Content Include="Views\metodoPago\Delete.cshtml" />
-    <Content Include="Views\metodoPago\Details.cshtml" />
-    <Content Include="Views\metodoPago\Edit.cshtml" />
-    <Content Include="Views\metodoPago\Index.cshtml" />
     <Content Include="Views\categorias\Create.cshtml" />
     <Content Include="Views\categorias\Delete.cshtml" />
     <Content Include="Views\categorias\Details.cshtml" />
@@ -386,6 +372,26 @@
     <Content Include="Views\Catalogo\prodCategoria.cshtml" />
     <Content Include="Views\Catalogo\prodCompletos.cshtml" />
     <Content Include="Views\Carro\Index.cshtml" />
+    <Content Include="Views\metodoPago\Create.cshtml" />
+    <Content Include="Views\metodoPago\Delete.cshtml" />
+    <Content Include="Views\metodoPago\Details.cshtml" />
+    <Content Include="Views\metodoPago\Edit.cshtml" />
+    <Content Include="Views\metodoPago\Index.cshtml" />
+    <Content Include="Views\ordenCliente\Create.cshtml" />
+    <Content Include="Views\ordenCliente\Delete.cshtml" />
+    <Content Include="Views\ordenCliente\Details.cshtml" />
+    <Content Include="Views\ordenCliente\Edit.cshtml" />
+    <Content Include="Views\ordenCliente\Index.cshtml" />
+    <Content Include="Views\datosEnvio\Create.cshtml" />
+    <Content Include="Views\datosEnvio\Delete.cshtml" />
+    <Content Include="Views\datosEnvio\Details.cshtml" />
+    <Content Include="Views\datosEnvio\Edit.cshtml" />
+    <Content Include="Views\datosEnvio\Index.cshtml" />
+    <Content Include="Views\clientes\Create.cshtml" />
+    <Content Include="Views\clientes\Delete.cshtml" />
+    <Content Include="Views\clientes\Details.cshtml" />
+    <Content Include="Views\clientes\Edit.cshtml" />
+    <Content Include="Views\clientes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

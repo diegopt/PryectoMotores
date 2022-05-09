@@ -5,25 +5,25 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="9f7b80af19a3426993ddc23b2bcb41f3" Name="Diagram1">
-        <EntityTypeShape EntityType="MotoresModel.categorias" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="MotoresModel.datosEnvio" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MotoresModel.Empleado" Width="1.5" PointX="8" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="MotoresModel.metodoPago" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="MotoresModel.ordenCliente" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="MotoresModel.ordenProducto" Width="1.5" PointX="7.5" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="MotoresModel.paqueterias" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="MotoresModel.productos" Width="1.5" PointX="5.25" PointY="12.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="MotoresModel.Roles" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="MotoresModel.usuarios" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
-        <AssociationConnector Association="MotoresModel.FK__productos__id_ca__5070F446" ManuallyRouted="false" />
-        <AssociationConnector Association="MotoresModel.FK__datosEnvi__id_us__4CA06362" ManuallyRouted="false" />
-        <AssociationConnector Association="MotoresModel.FK__ordenClie__id_da__534D60F1" ManuallyRouted="false" />
-        <AssociationConnector Association="MotoresModel.FK__Empleado__id_rol__6754599E" ManuallyRouted="false" />
-        <AssociationConnector Association="MotoresModel.FK__metodoPag__id_us__4D94879B" ManuallyRouted="false" />
-        <AssociationConnector Association="MotoresModel.FK__ordenClie__id_pa__5535A963" ManuallyRouted="false" />
-        <AssociationConnector Association="MotoresModel.FK__ordenClie__id_us__5441852A" ManuallyRouted="false" />
-        <AssociationConnector Association="MotoresModel.FK__ordenProd__Id_or__5812160E" ManuallyRouted="false" />
-        <AssociationConnector Association="MotoresModel.FK__ordenProd__id_pr__59063A47" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MotoresModel.categorias" Width="1.5" PointX="3" PointY="13.25" />
+        <EntityTypeShape EntityType="MotoresModel.clientes" Width="1.5" PointX="0.75" PointY="2.75" />
+        <EntityTypeShape EntityType="MotoresModel.datosEnvio" Width="1.5" PointX="3" PointY="4.25" />
+        <EntityTypeShape EntityType="MotoresModel.Empleado" Width="1.5" PointX="10" PointY="0.875" />
+        <EntityTypeShape EntityType="MotoresModel.metodoPago" Width="1.5" PointX="3" PointY="1.375" />
+        <EntityTypeShape EntityType="MotoresModel.ordenCliente" Width="1.5" PointX="5.25" PointY="3.25" />
+        <EntityTypeShape EntityType="MotoresModel.ordenProducto" Width="1.5" PointX="7.5" PointY="4.125" />
+        <EntityTypeShape EntityType="MotoresModel.paqueterias" Width="1.5" PointX="3" PointY="8.875" />
+        <EntityTypeShape EntityType="MotoresModel.productos" Width="1.5" PointX="5.25" PointY="12.625" />
+        <EntityTypeShape EntityType="MotoresModel.Roles" Width="1.5" PointX="7.75" PointY="1.125" />
+        <AssociationConnector Association="MotoresModel.FK__productos__id_ca__74AE54BC" />
+        <AssociationConnector Association="MotoresModel.FK__datosEnvi__id_cl__2B0A656D" />
+        <AssociationConnector Association="MotoresModel.FK__metodoPag__id_cl__2BFE89A6" />
+        <AssociationConnector Association="MotoresModel.FK__ordenClie__id_cl__31B762FC" />
+        <AssociationConnector Association="MotoresModel.FK__ordenClie__id_da__2EDAF651" />
+        <AssociationConnector Association="MotoresModel.FK__Empleado__id_rol__04E4BC85" />
+        <AssociationConnector Association="MotoresModel.FK__ordenClie__id_pa__2FCF1A8A" />
+        <AssociationConnector Association="MotoresModel.FK__ordenProd__Id_or__30C33EC3" />
+        <AssociationConnector Association="MotoresModel.FK__ordenProd__id_pr__73BA3083" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

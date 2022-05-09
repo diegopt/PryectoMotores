@@ -17,7 +17,7 @@ namespace MiTienda.Controllers
         // GET: ordenCliente
         public ActionResult Index()
         {
-            var ordenCliente = db.ordenCliente.Include(o => o.datosEnvio).Include(o => o.paqueterias).Include(o => o.usuarios).Include(o => o.ordenProducto);
+            var ordenCliente = db.ordenCliente.Include(o => o.clientes).Include(o => o.datosEnvio).Include(o => o.paqueterias).Include(o => o.ordenProducto);
             return View(ordenCliente.ToList());
         }
 
@@ -39,9 +39,9 @@ namespace MiTienda.Controllers
         // GET: ordenCliente/Create
         public ActionResult Create()
         {
+            ViewBag.id_cliente = new SelectList(db.clientes, "Id_cliente", "nombre");
             ViewBag.id_datosEnvio = new SelectList(db.datosEnvio, "Id_datosEnvio", "calle");
             ViewBag.id_paqueteria = new SelectList(db.paqueterias, "Id_paqueteria", "nombre");
-            ViewBag.id_usuario = new SelectList(db.usuarios, "Id_usuario", "nombre");
             ViewBag.Id_ordenCliente = new SelectList(db.ordenProducto, "Id_ordenCliente", "Id_ordenCliente");
             return View();
         }
@@ -51,7 +51,7 @@ namespace MiTienda.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id_ordenCliente,fecha_creacion,num_confirmacion,total,num_guia,fecha_envio,fecha_entrega,id_usuario,id_datosEnvio,id_paqueteria")] ordenCliente ordenCliente)
+        public ActionResult Create([Bind(Include = "Id_ordenCliente,fecha_creacion,num_confirmacion,total,num_guia,fecha_envio,fecha_entrega,id_cliente,id_datosEnvio,id_paqueteria")] ordenCliente ordenCliente)
         {
             if (ModelState.IsValid)
             {
@@ -60,9 +60,9 @@ namespace MiTienda.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.id_cliente = new SelectList(db.clientes, "Id_cliente", "nombre", ordenCliente.id_cliente);
             ViewBag.id_datosEnvio = new SelectList(db.datosEnvio, "Id_datosEnvio", "calle", ordenCliente.id_datosEnvio);
             ViewBag.id_paqueteria = new SelectList(db.paqueterias, "Id_paqueteria", "nombre", ordenCliente.id_paqueteria);
-            ViewBag.id_usuario = new SelectList(db.usuarios, "Id_usuario", "nombre", ordenCliente.id_usuario);
             ViewBag.Id_ordenCliente = new SelectList(db.ordenProducto, "Id_ordenCliente", "Id_ordenCliente", ordenCliente.Id_ordenCliente);
             return View(ordenCliente);
         }
@@ -79,9 +79,9 @@ namespace MiTienda.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.id_cliente = new SelectList(db.clientes, "Id_cliente", "nombre", ordenCliente.id_cliente);
             ViewBag.id_datosEnvio = new SelectList(db.datosEnvio, "Id_datosEnvio", "calle", ordenCliente.id_datosEnvio);
             ViewBag.id_paqueteria = new SelectList(db.paqueterias, "Id_paqueteria", "nombre", ordenCliente.id_paqueteria);
-            ViewBag.id_usuario = new SelectList(db.usuarios, "Id_usuario", "nombre", ordenCliente.id_usuario);
             ViewBag.Id_ordenCliente = new SelectList(db.ordenProducto, "Id_ordenCliente", "Id_ordenCliente", ordenCliente.Id_ordenCliente);
             return View(ordenCliente);
         }
@@ -91,7 +91,7 @@ namespace MiTienda.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id_ordenCliente,fecha_creacion,num_confirmacion,total,num_guia,fecha_envio,fecha_entrega,id_usuario,id_datosEnvio,id_paqueteria")] ordenCliente ordenCliente)
+        public ActionResult Edit([Bind(Include = "Id_ordenCliente,fecha_creacion,num_confirmacion,total,num_guia,fecha_envio,fecha_entrega,id_cliente,id_datosEnvio,id_paqueteria")] ordenCliente ordenCliente)
         {
             if (ModelState.IsValid)
             {
@@ -99,9 +99,9 @@ namespace MiTienda.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.id_cliente = new SelectList(db.clientes, "Id_cliente", "nombre", ordenCliente.id_cliente);
             ViewBag.id_datosEnvio = new SelectList(db.datosEnvio, "Id_datosEnvio", "calle", ordenCliente.id_datosEnvio);
             ViewBag.id_paqueteria = new SelectList(db.paqueterias, "Id_paqueteria", "nombre", ordenCliente.id_paqueteria);
-            ViewBag.id_usuario = new SelectList(db.usuarios, "Id_usuario", "nombre", ordenCliente.id_usuario);
             ViewBag.Id_ordenCliente = new SelectList(db.ordenProducto, "Id_ordenCliente", "Id_ordenCliente", ordenCliente.Id_ordenCliente);
             return View(ordenCliente);
         }

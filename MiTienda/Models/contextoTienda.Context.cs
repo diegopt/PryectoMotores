@@ -26,6 +26,7 @@ namespace MiTienda.Models
         }
     
         public virtual DbSet<categorias> categorias { get; set; }
+        public virtual DbSet<clientes> clientes { get; set; }
         public virtual DbSet<datosEnvio> datosEnvio { get; set; }
         public virtual DbSet<Empleado> Empleado { get; set; }
         public virtual DbSet<metodoPago> metodoPago { get; set; }
@@ -34,6 +35,5 @@ namespace MiTienda.Models
         public virtual DbSet<paqueterias> paqueterias { get; set; }
         public virtual DbSet<productos> productos { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
-        public virtual DbSet<usuarios> usuarios { get; set; }
     }
 }

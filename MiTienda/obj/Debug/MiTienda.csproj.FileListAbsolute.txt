@@ -227,7 +227,6 @@ C:\git\PryectoMotores\MiTienda\bin\es\EntityFramework.SqlServer.resources.dll
 C:\git\PryectoMotores\MiTienda\bin\es\Microsoft.AspNet.Identity.Core.resources.dll
 C:\git\PryectoMotores\MiTienda\bin\es\Microsoft.AspNet.Identity.Owin.resources.dll
 C:\git\PryectoMotores\MiTienda\bin\es\Microsoft.AspNet.Identity.EntityFramework.resources.dll
-C:\git\PryectoMotores\MiTienda\obj\Debug\MiTienda.csprojAssemblyReference.cache
 C:\git\PryectoMotores\MiTienda\obj\Debug\MiTienda.csproj.CoreCompileInputs.cache
 C:\git\PryectoMotores\MiTienda\obj\Debug\MiTienda.csproj.CopyComplete
 C:\git\PryectoMotores\MiTienda\obj\Debug\MiTienda.dll

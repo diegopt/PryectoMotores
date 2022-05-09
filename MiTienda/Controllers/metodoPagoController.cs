@@ -17,7 +17,7 @@ namespace MiTienda.Controllers
         // GET: metodoPago
         public ActionResult Index()
         {
-            var metodoPago = db.metodoPago.Include(m => m.usuarios);
+            var metodoPago = db.metodoPago.Include(m => m.clientes);
             return View(metodoPago.ToList());
         }
 
@@ -39,7 +39,7 @@ namespace MiTienda.Controllers
         // GET: metodoPago/Create
         public ActionResult Create()
         {
-            ViewBag.id_usuario = new SelectList(db.usuarios, "Id_usuario", "nombre");
+            ViewBag.id_cliente = new SelectList(db.clientes, "Id_cliente", "nombre");
             return View();
         }
 
@@ -48,7 +48,7 @@ namespace MiTienda.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id_pago,numeracion,fecha,cvv,id_usuario")] metodoPago metodoPago)
+        public ActionResult Create([Bind(Include = "Id_pago,numeracion,fecha,cvv,id_cliente")] metodoPago metodoPago)
         {
             if (ModelState.IsValid)
             {
@@ -57,7 +57,7 @@ namespace MiTienda.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.id_usuario = new SelectList(db.usuarios, "Id_usuario", "nombre", metodoPago.id_usuario);
+            ViewBag.id_cliente = new SelectList(db.clientes, "Id_cliente", "nombre", metodoPago.id_cliente);
             return View(metodoPago);
         }
 
@@ -73,7 +73,7 @@ namespace MiTienda.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.id_usuario = new SelectList(db.usuarios, "Id_usuario", "nombre", metodoPago.id_usuario);
+            ViewBag.id_cliente = new SelectList(db.clientes, "Id_cliente", "nombre", metodoPago.id_cliente);
             return View(metodoPago);
         }
 
@@ -82,7 +82,7 @@ namespace MiTienda.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id_pago,numeracion,fecha,cvv,id_usuario")] metodoPago metodoPago)
+        public ActionResult Edit([Bind(Include = "Id_pago,numeracion,fecha,cvv,id_cliente")] metodoPago metodoPago)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace MiTienda.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.id_usuario = new SelectList(db.usuarios, "Id_usuario", "nombre", metodoPago.id_usuario);
+            ViewBag.id_cliente = new SelectList(db.clientes, "Id_cliente", "nombre", metodoPago.id_cliente);
             return View(metodoPago);
         }
 

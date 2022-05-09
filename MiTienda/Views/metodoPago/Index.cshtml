@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div style="height: 150px; background-color:white"></div>
+
 <h2>Index</h2>
 
 <p>
@@ -22,7 +22,7 @@
             @Html.DisplayNameFor(model => model.cvv)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.usuarios.nombre)
+            @Html.DisplayNameFor(model => model.clientes.nombre)
         </th>
         <th></th>
     </tr>
@@ -39,7 +39,7 @@
             @Html.DisplayFor(modelItem => item.cvv)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.usuarios.nombre)
+            @Html.DisplayFor(modelItem => item.clientes.nombre)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id_pago }) |

@@ -35,12 +35,12 @@ namespace MiTienda.Controllers
                     }
                     else
                     {
-                        var query1 = from st in db.usuarios where st.correo == correo select st;
+                        var query1 = from st in db.clientes where st.correo == correo select st;
                         var lista1 = query1.ToList();
 
                         if (lista1.Count > 0)
                         {
-                            var cliente = query1.FirstOrDefault<usuarios>();
+                            var cliente = query1.FirstOrDefault<clientes>();
                             string[] nombres = cliente.nombre.ToString().Split(' ');
                             Session["name"] = nombres[0];
                             Session["usr"] = cliente.nombre;
@@ -55,11 +55,11 @@ namespace MiTienda.Controllers
                 {
                     return RedirectToAction("Index", "Administrador");
                 }
-                if (rol == "comprador")
+                if (rol == "compras")
                 {
                     return RedirectToAction("Index", "Compras");
                 }
-                if (rol == "cliente")
+                if (rol == "cliente")//usuario registrado
                 {
                     return RedirectToAction("Index", "Home");
                 }

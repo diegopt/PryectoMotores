@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div style="height: 150px; background-color:white"></div>
+
 <h2>Index</h2>
 
 <p>
@@ -31,13 +31,13 @@
             @Html.DisplayNameFor(model => model.fecha_entrega)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.clientes.nombre)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.datosEnvio.calle)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.paqueterias.nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.usuarios.nombre)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ordenProducto.Id_ordenCliente)
@@ -66,13 +66,13 @@
             @Html.DisplayFor(modelItem => item.fecha_entrega)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.clientes.nombre)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.datosEnvio.calle)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.paqueterias.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.usuarios.nombre)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ordenProducto.Id_ordenCliente)
