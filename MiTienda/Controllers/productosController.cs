@@ -10,18 +10,18 @@ using MiTienda.Models;
 
 namespace MiTienda.Controllers
 {
-    public class productosController : Controller
+    public class ProductosController : Controller
     {
         private contextoTienda db = new contextoTienda();
 
-        // GET: productos
+        // GET: Productos
         public ActionResult Index()
         {
             var productos = db.productos.Include(p => p.categorias);
             return View(productos.ToList());
         }
 
-        // GET: productos/Details/5
+        // GET: Productos/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,24 +36,31 @@ namespace MiTienda.Controllers
             return View(productos);
         }
 
-        // GET: productos/Create
+        // GET: Productos/Create
         public ActionResult Create()
         {
             ViewBag.id_categoria = new SelectList(db.categorias, "Id_categoria", "nombre");
             return View();
         }
 
-        // POST: productos/Create
+        // POST: Productos/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id_producto,nombre,descripcion,precio,ult_actualizacion,imagen,existencia,stock,id_categoria")] productos productos)
+        public ActionResult Create([Bind(Include = "Id_producto,nombre,descripcion,precio,imagen,existencia,stock,id_categoria")] productos productos)
         {
             if (ModelState.IsValid)
             {
                 db.productos.Add(productos);
                 db.SaveChanges();
+
+                int id = productos.Id_producto;
+                var prod = db.productos.Find(id);
+                DateTime hoy = DateTime.Now;
+                prod.ult_actualizacion = hoy;
+                db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
 
@@ -61,7 +68,7 @@ namespace MiTienda.Controllers
             return View(productos);
         }
 
-        // GET: productos/Edit/5
+        // GET: Productos/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,7 +84,7 @@ namespace MiTienda.Controllers
             return View(productos);
         }
 
-        // POST: productos/Edit/5
+        // POST: Productos/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -86,15 +93,34 @@ namespace MiTienda.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(productos).State = EntityState.Modified;
+                int id = productos.Id_producto;
+                var prod = db.productos.Find(id);
+                var precio_ant = prod.precio;
+                var precio_act = productos.precio;
+                //db.Entry(producto).State = EntityState.Modified;
+                prod.nombre = productos.nombre;
+                prod.descripcion = productos.descripcion;
+                prod.precio = productos.precio;
+                prod.imagen = productos.imagen;
+                prod.existencia = productos.existencia;
+                prod.stock = productos.stock;
+                prod.id_categoria = productos.id_categoria;
+
+                if (precio_act != precio_ant)
+                {
+                    DateTime hoy = DateTime.Now;
+                    prod.ult_actualizacion = hoy;
+                }
+
                 db.SaveChanges();
+
                 return RedirectToAction("Index");
             }
             ViewBag.id_categoria = new SelectList(db.categorias, "Id_categoria", "nombre", productos.id_categoria);
             return View(productos);
         }
 
-        // GET: productos/Delete/5
+        // GET: Productos/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -109,7 +135,7 @@ namespace MiTienda.Controllers
             return View(productos);
         }
 
-        // POST: productos/Delete/5
+        // POST: Productos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
