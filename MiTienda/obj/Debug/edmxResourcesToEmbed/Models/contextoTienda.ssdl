@@ -127,7 +127,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Empleado__id_rol__3C34F16F">
+  <Association Name="FK__Empleado__id_rol__3F115E1A">
     <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
     <End Role="Empleado" Type="Self.Empleado" Multiplicity="*" />
     <ReferentialConstraint>
@@ -175,7 +175,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ordenClie__id_pa__2FCF1A8A">
+  <Association Name="FK__ordenClie__id_pa__41EDCAC5">
     <End Role="paqueterias" Type="Self.paqueterias" Multiplicity="1" />
     <End Role="ordenCliente" Type="Self.ordenCliente" Multiplicity="*" />
     <ReferentialConstraint>
@@ -187,7 +187,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ordenProd__Id_or__30C33EC3">
+  <Association Name="FK__ordenProd__Id_or__489AC854">
     <End Role="ordenCliente" Type="Self.ordenCliente" Multiplicity="1" />
     <End Role="ordenProducto" Type="Self.ordenProducto" Multiplicity="0..1" />
     <ReferentialConstraint>
@@ -199,7 +199,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ordenProd__id_pr__73BA3083">
+  <Association Name="FK__ordenProd__id_pr__498EEC8D">
     <End Role="productos" Type="Self.productos" Multiplicity="1" />
     <End Role="ordenProducto" Type="Self.ordenProducto" Multiplicity="*" />
     <ReferentialConstraint>
@@ -238,7 +238,7 @@
       <End Role="clientes" EntitySet="clientes" />
       <End Role="datosEnvio" EntitySet="datosEnvio" />
     </AssociationSet>
-    <AssociationSet Name="FK__Empleado__id_rol__3C34F16F" Association="Self.FK__Empleado__id_rol__3C34F16F">
+    <AssociationSet Name="FK__Empleado__id_rol__3F115E1A" Association="Self.FK__Empleado__id_rol__3F115E1A">
       <End Role="Roles" EntitySet="Roles" />
       <End Role="Empleado" EntitySet="Empleado" />
     </AssociationSet>
@@ -254,15 +254,15 @@
       <End Role="datosEnvio" EntitySet="datosEnvio" />
       <End Role="ordenCliente" EntitySet="ordenCliente" />
     </AssociationSet>
-    <AssociationSet Name="FK__ordenClie__id_pa__2FCF1A8A" Association="Self.FK__ordenClie__id_pa__2FCF1A8A">
+    <AssociationSet Name="FK__ordenClie__id_pa__41EDCAC5" Association="Self.FK__ordenClie__id_pa__41EDCAC5">
       <End Role="paqueterias" EntitySet="paqueterias" />
       <End Role="ordenCliente" EntitySet="ordenCliente" />
     </AssociationSet>
-    <AssociationSet Name="FK__ordenProd__Id_or__30C33EC3" Association="Self.FK__ordenProd__Id_or__30C33EC3">
+    <AssociationSet Name="FK__ordenProd__Id_or__489AC854" Association="Self.FK__ordenProd__Id_or__489AC854">
       <End Role="ordenCliente" EntitySet="ordenCliente" />
       <End Role="ordenProducto" EntitySet="ordenProducto" />
     </AssociationSet>
-    <AssociationSet Name="FK__ordenProd__id_pr__73BA3083" Association="Self.FK__ordenProd__id_pr__73BA3083">
+    <AssociationSet Name="FK__ordenProd__id_pr__498EEC8D" Association="Self.FK__ordenProd__id_pr__498EEC8D">
       <End Role="productos" EntitySet="productos" />
       <End Role="ordenProducto" EntitySet="ordenProducto" />
     </AssociationSet>

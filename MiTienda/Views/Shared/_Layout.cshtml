@@ -20,6 +20,9 @@
             margin-left: 1%;
             display: flex;
         }
+        #motor{
+            margin-left: 30%;
+        }
     </style>
 
 </head>
@@ -30,7 +33,7 @@
         <div class="tnavbar bg-primary row text-center" style="background-color:royalblue">
             <h1 id="motor" class="col-lg-offset-2 col-lg-5">Motor - Inc</h1>
 
-            <div class="search-container col-lg-offset-1 col-lg-4 text-center" id="buscador">              
+            <div class="search-container col-lg-offset-1 text-center" id="buscador">              
                     @using (Html.BeginForm("BuscaProd", "Catalogo", FormMethod.Post, new { @class = "form-inline" }))
                     {
                         <input class="form-control mr-sm-2" type="text" placeholder="Buscar.." name="nomBuscar" id="nomBuscar" style="width:auto">

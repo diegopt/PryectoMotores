@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
+using System.Net;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
@@ -179,7 +180,7 @@ namespace MiTienda.Controllers
                         Session["name"] = "";
                         Session["correo"] = user.Email;
                     }
-                    return RedirectToAction("Create", "usuarios");
+                    return RedirectToAction("Create", "clientes");
 
 
                 }
@@ -499,5 +500,22 @@ namespace MiTienda.Controllers
             }
         }
         #endregion
+
+        //get con parametro
+        [HttpGet]
+        public async Task<ActionResult> Delete(string id)
+        {
+            if (ModelState.IsValid)
+            {
+                if (id == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+                var user = await UserManager.FindByIdAsync(id);
+
+                var result = await UserManager.DeleteAsync(user);
+            }
+            return RedirectToAction("Register");
+        }
     }
 }

@@ -348,3 +348,4 @@ C:\Users\abner\OneDrive\Documentos\GitHub\PryectoMotores\MiTienda\obj\Debug\MiTi
 C:\Users\abner\OneDrive\Documentos\GitHub\PryectoMotores\MiTienda\obj\Debug\MiTienda.csproj.CopyComplete
 C:\Users\abner\OneDrive\Documentos\GitHub\PryectoMotores\MiTienda\obj\Debug\MiTienda.dll
 C:\Users\abner\OneDrive\Documentos\GitHub\PryectoMotores\MiTienda\obj\Debug\MiTienda.pdb
+C:\git\PryectoMotores\MiTienda\obj\Debug\MiTienda.csprojAssemblyReference.cache

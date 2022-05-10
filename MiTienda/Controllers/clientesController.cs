@@ -48,6 +48,19 @@ namespace MiTienda.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id_cliente,nombre,apellido_p,apellido_m,correo,contraseña,fecha_nacimiento,rfc,telefono")] clientes clientes)
         {
+            clientes cliente = new clientes();
+            int id = 0;
+            if(!(db.clientes.Max(c => (int?)c.Id_cliente)==null))
+            {
+                id = db.clientes.Max(c => c.Id_cliente);
+            }
+            else
+            {
+                id = 0;
+            }
+            id++;
+
+
             if (ModelState.IsValid)
             {
                 db.clientes.Add(clientes);
@@ -55,9 +68,22 @@ namespace MiTienda.Controllers
                 string rol = "cliente";
                 clientes.rol = rol;
                 db.SaveChanges();
-
-                return RedirectToAction("Index");
+                //return RedirectToAction("Index");
             }
+
+            if (Session["CrearOrden"] != null)
+            {
+                if (Session["CrearOrden"].Equals("pend"))
+                {
+                    return RedirectToAction("CrearOrden", "Pago");
+                }
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+            
 
             return View(clientes);
         }
@@ -126,6 +152,22 @@ namespace MiTienda.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+
+
+
+
+
+        public ActionResult Invalida()
+        {
+            return View();
+        }
+
+        public ActionResult BorraUser()
+        {
+            string idUser = User.Identity.AuthenticationType;
+            return RedirectToAction("Delete", "Account", routeValues: new { id = idUser });
         }
     }
 }

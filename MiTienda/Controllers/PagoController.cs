@@ -23,6 +23,9 @@ namespace MiTienda.Controllers
                 return RedirectToAction("Login", "Account");
             }
 
+          ///  var orden = new orden();
+
+
             return View();
         }
     }
