@@ -9,6 +9,7 @@
 {
     @Html.AntiForgeryToken()
     <h4>Cree una cuenta nueva.</h4>
+    <img src="~/Content/images/carrusel/registrarse_logo.jpg" style="margin-left:15%; width:300px; height:250px;"/>
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
@@ -31,7 +32,7 @@
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Registrarse" />
+            <input type="submit" class="btn btn-default" value="Registrarse"  style=" color:white; background-color:royalblue"/>
         </div>
     </div>
 }

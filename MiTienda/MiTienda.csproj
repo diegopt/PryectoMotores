@@ -253,6 +253,7 @@
     <Content Include="Content\images\carrusel\carrusel3.jpg" />
     <Content Include="Content\images\carrusel\estilos.css" />
     <Content Include="Content\images\carrusel\fondo.jpg" />
+    <Content Include="Content\images\carrusel\registrarse_logo.jpg" />
     <Content Include="Content\images\estilosTablas.css" />
     <Content Include="Content\images\motores\alterna1.jpg" />
     <Content Include="Content\images\motores\alterna2.jpg" />
