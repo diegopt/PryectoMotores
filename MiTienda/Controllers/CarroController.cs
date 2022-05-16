@@ -27,7 +27,6 @@ namespace MiTienda.Controllers
                 String nam = p.nombre;
                 cart.Add(new Item { Product = carro.find(id), Cantidad = 1 });
                 Session["cart"] = cart;
-
             }
             else
             {
@@ -36,14 +35,12 @@ namespace MiTienda.Controllers
                 if (index != -1)
                 {
                     cart[index].Cantidad++;
-
                 }
                 else
                 {
                     productos p = carro.find(id);
                     string nam = p.nombre;
-                    cart.Add(new Item { Product = carro.find(id), Cantidad = 1 });
-             
+                   cart.Add(new Item { Product = carro.find(id), Cantidad = 1 });            
                 }
                 Session["cart"] = cart;
             }
