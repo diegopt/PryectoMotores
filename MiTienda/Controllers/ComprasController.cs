@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace MiTienda.Controllers
 {
+    [Authorize]
     public class ComprasController : Controller
     {
         // GET: Compras

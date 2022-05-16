@@ -57,7 +57,7 @@
           <Key>
             <PropertyRef Name="Id_pago" />
           </Key>
-          <Property Name="Id_pago" Type="int" Nullable="false" />
+          <Property Name="Id_pago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="numeracion" Type="int" />
           <Property Name="fecha" Type="date" />
           <Property Name="cvv" Type="int" />
@@ -144,7 +144,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__metodoPag__id_cl__2BFE89A6">
+        <Association Name="FK__metodoPag__id_cl__4F47C5E3">
           <End Role="clientes" Type="Self.clientes" Multiplicity="1" />
           <End Role="metodoPago" Type="Self.metodoPago" Multiplicity="*" />
           <ReferentialConstraint>
@@ -247,7 +247,7 @@
             <End Role="Roles" EntitySet="Roles" />
             <End Role="Empleado" EntitySet="Empleado" />
           </AssociationSet>
-          <AssociationSet Name="FK__metodoPag__id_cl__2BFE89A6" Association="Self.FK__metodoPag__id_cl__2BFE89A6">
+          <AssociationSet Name="FK__metodoPag__id_cl__4F47C5E3" Association="Self.FK__metodoPag__id_cl__4F47C5E3">
             <End Role="clientes" EntitySet="clientes" />
             <End Role="metodoPago" EntitySet="metodoPago" />
           </AssociationSet>
