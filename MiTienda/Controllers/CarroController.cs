@@ -27,7 +27,6 @@ namespace MiTienda.Controllers
                 String nam = p.nombre;
                 cart.Add(new Item { Product = carro.find(id), Cantidad = 1 });
                 Session["cart"] = cart;
-
             }
             else
             {
@@ -40,12 +39,12 @@ namespace MiTienda.Controllers
                 else
                 {
                     productos p = carro.find(id);
-                    String nam = p.nombre;
-
-                    cart.Add(new Item { Product = carro.find(id), Cantidad = 1 });
+                    string nam = p.nombre;
+                   cart.Add(new Item { Product = carro.find(id), Cantidad = 1 });            
                 }
                 Session["cart"] = cart;
             }
+           
             return RedirectToAction("Index");
         }
 
@@ -55,6 +54,7 @@ namespace MiTienda.Controllers
             int index = isExist(id);
             cart.RemoveAt(index);
             Session["cart"] = cart;
+
             return RedirectToAction("Index");
         }
 
@@ -66,5 +66,6 @@ namespace MiTienda.Controllers
                     return i;
             return -1;
         }
+      
     }
 }

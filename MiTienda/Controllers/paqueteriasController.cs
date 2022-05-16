@@ -10,8 +10,10 @@ using MiTienda.Models;
 
 namespace MiTienda.Controllers
 {
+    [Authorize]
     public class paqueteriasController : Controller
     {
+      
         private contextoTienda db = new contextoTienda();
 
         // GET: paqueterias

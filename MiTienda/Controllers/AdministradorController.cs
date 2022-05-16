@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MiTienda.Models
 {
+    [Authorize]
     public class AdministradorController : Controller
     {
         private contextoTienda db = new contextoTienda();

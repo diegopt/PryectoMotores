@@ -369,11 +369,6 @@
     <Content Include="Views\Catalogo\prodCategoria.cshtml" />
     <Content Include="Views\Catalogo\prodCompletos.cshtml" />
     <Content Include="Views\Carro\Index.cshtml" />
-    <Content Include="Views\metodoPago\Create.cshtml" />
-    <Content Include="Views\metodoPago\Delete.cshtml" />
-    <Content Include="Views\metodoPago\Details.cshtml" />
-    <Content Include="Views\metodoPago\Edit.cshtml" />
-    <Content Include="Views\metodoPago\Index.cshtml" />
     <Content Include="Views\ordenCliente\Create.cshtml" />
     <Content Include="Views\ordenCliente\Delete.cshtml" />
     <Content Include="Views\ordenCliente\Details.cshtml" />
@@ -396,6 +391,12 @@
     <Content Include="Views\paqueterias\Index.cshtml" />
     <Content Include="Views\Compras\Index.cshtml" />
     <Content Include="Views\clientes\Invalida.cshtml" />
+    <Content Include="Views\metodoPago\Create.cshtml" />
+    <Content Include="Views\metodoPago\Delete.cshtml" />
+    <Content Include="Views\metodoPago\Details.cshtml" />
+    <Content Include="Views\metodoPago\Edit.cshtml" />
+    <Content Include="Views\metodoPago\Index.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial_1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

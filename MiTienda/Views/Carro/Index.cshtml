@@ -25,27 +25,33 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (Item item in (List<Item>)Session["cart"])
-                {
-                    <tr>
-                        <td><a href="@Url.Action("Quitar", "Carro", new { id = item.Product.Id_producto })">Quitar</a></td>
-                        <td>@item.Product.nombre</td>
-                        <td><img class="img-responsive" src="~/Content/images/motores/@item.Product.imagen" /></td>
-                        <td>@item.Product.precio</td>
-                        <td>@item.Cantidad</td>
-                        <td>@(item.Product.precio * item.Cantidad)</td>
-
-                    </tr>
-                }
+                @{ if (Session["cart"] != null)
+                    {
+                        foreach (Item item in (List<Item>)Session["cart"])
+                        {
                 <tr>
-                    <td align="right" colspan="5">Total</td>
-                    <td>
-                        @{
-                            List<Item> cart = (List<Item>)Session["cart"];
-                            var total = cart.Sum(item => item.Product.precio * item.Cantidad);
-                        }@total
-                    </td>
+                    <td><a href="@Url.Action("Quitar", "Carro", new { id = item.Product.Id_producto })">Quitar</a></td>
+                    <td>@item.Product.nombre</td>
+                    <td><img class="img-responsive" src="~/Content/images/motores/@item.Product.imagen" /></td>
+                    <td>@item.Product.precio</td>
+                    <td>@item.Cantidad</td>
+                    <td>@(item.Product.precio * item.Cantidad)</td>
+                  
                 </tr>
+                        }
+                        <tr>
+                            <td align="right" colspan="5">Total</td>
+                            <td>
+                                @{
+                                    List<Item> cart = (List<Item>)Session["cart"];
+                                    var total = cart.Sum(item => item.Product.precio * item.Cantidad);
+                                    var numero = cart.Sum(item => item.Cantidad); //para sumar icono de carrito
+                                    Session["itemTotal"] = numero; //para sumar icono de carrito
+                                }@total
+                            </td>
+                        </tr>                      
+                    }
+                }
             </tbody>
         </table>
         <br />

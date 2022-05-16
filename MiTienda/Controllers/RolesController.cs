@@ -10,6 +10,7 @@ using MiTienda.Models;
 
 namespace MiTienda.Controllers
 {
+    [Authorize]
     public class RolesController : Controller
     {
         private contextoTienda db = new contextoTienda();
