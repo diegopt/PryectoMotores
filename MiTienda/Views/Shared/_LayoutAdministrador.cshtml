@@ -8,6 +8,13 @@
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css/libs/jquery-ui.min.css")
+    @Styles.Render("~/Content/css/libs/bootstrap.min.css")
+    @Styles.Render("~/Content/css/libs/bootstrap.min.css")
+    @Styles.Render("~/Content/css/libs/font-awesome.min.css")
+    @Styles.Render("~/Content/css/libs/font-awesome.css")
+    @Styles.Render("~/Content/css/libs/jquery.dataTables.min.css")
+
 
     <style>
         .tnavbar {
@@ -51,9 +58,9 @@
     </style>
 
 </head>
-<body>
+<body id="bodyAdmin" style="padding-top:0px">
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse ">
 
         <div class="container-fluid" style="background-color:royalblue">
             <h1 id="motor">Motor - Inc</h1>
@@ -74,12 +81,9 @@
             </div>
 
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-header">
-                    
-
-                </ul>
+                <ul class="nav navbar-header"></ul>
                 <ul class="nav navbar-nav">
-                    <li style="font-size:150%; color:white">@Html.ActionLink("Empleados", "Index", "Administrador")</li>
+                    <li style="font-size:150%; color:white">@Html.ActionLink("Empleados", "Lista", "Administrador")</li>
                     <li style="font-size:150%; color:white">@Html.ActionLink("Roles", "Index", "Roles")</li>
 
                 </ul>
@@ -87,10 +91,8 @@
             </div>
 
         </div>
-    
+
     </div>
-    <br />
-    <br />
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -101,6 +103,17 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Content/js/libs/jquery-3.4.1.min.js")
+    @Scripts.Render("~/Content/js/libs/bootstrap.min.js")
+    @Scripts.Render("~/Content/js/libs/bootbox.all.min.js")
+    @Scripts.Render("~/Content/js/libs/datatables.min.js")
+    @Scripts.Render("~/Content/js/libs/jquery.dataTables.min.js")
+    @Scripts.Render("~/Content/js/generados/constantes.js")
+    @Scripts.Render("~/Content/js/generados/DataTableEmpleados.js")
+    @Scripts.Render("~/Content/js/generados/DataTableRoles.js")
+    @Scripts.Render("~/Content/js/generados/EventosAdministrador.js")
+    @Scripts.Render("~/Content/js/generados/funciones.js")
+    @Scripts.Render("~/Content/js/generados/ValidacionesAdministrador.js")
     @RenderSection("scripts", required: false)
 
 </body>

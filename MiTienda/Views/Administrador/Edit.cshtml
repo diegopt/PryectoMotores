@@ -4,46 +4,89 @@
     ViewBag.Title = "Editar Empleado";
     Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
 }
-<div style="height: 150px; background-color:white"></div>
+
 <div class="row">
     <h2 class="col-md-10" style="text-align:left">Actualizar Empleado</h2>
-    <a href="/Administrador" class="btn col-md-2" style="margin-top: 15px; margin-bottom:20px;">
+    <a href="/Administrador/Lista" class="btn col-md-2" style="margin-top: 15px; margin-bottom:20px;">
         <button style="font-size:17px; background-color:black; color:white; border-radius: 44px;">
             <i class="fa fa-fw fa-arrow-left"></i>
         </button>
     </a>
 </div>
 <hr />
-<h4>Modifique los datos a actualizar del Empleado</h4>
+
 <br />
+
+
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
+<div class="form-horizontal">
 
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.id_emp)
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.id_emp)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group" hidden>
+        @Html.LabelFor(model => model.id_emp, "Nombre del Empleado", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.id_emp, new { htmlAttributes = new { @class = "form-control", @Value = Model.id_emp } })
+            @Html.ValidationMessageFor(model => model.id_emp, "", new { @class = "text-danger" })
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.correo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.correo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.correo, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group" hidden>
+        @Html.LabelFor(model => model.nombre, "Nombre del Empleado", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
         </div>
+    </div>
+
+    <div class="form-group" hidden>
+        @Html.LabelFor(model => model.contrasenia, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.contrasenia, new { htmlAttributes = new { @class = "form-control", @Value = "Contra.1234" } })
+            @Html.ValidationMessageFor(model => model.contrasenia, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group" hidden>
+        @Html.LabelFor(model => model.correo, "Correo del Empleado", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.correo, new { htmlAttributes = new { @class = "form-control readonly" } })
+            @Html.ValidationMessageFor(model => model.correo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            <p style="font-size:20px">Nombre: </p>
+        </dt>
+
+        <dd>
+            <p style="font-size:20px">@Model.nombre</p>
+        </dd>
+
+        <dt>
+            <p style="font-size:20px">Correo: </p>
+        </dt>
+
+        <dd>
+            <p style="font-size:20px">@Model.correo</p>
+        </dd>
+        </dl>
+        <br />
+        <p style="font-size:20px"> Solo se permite modificar el Rol del Empleado </p>
+
+    
+    <br />
+    <br />
+    
 
         <div class="form-group">
-            @Html.LabelFor(model => model.id_rol, "id_rol", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.id_rol, "Rol del Empleado", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("id_rol", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.id_rol, "", new { @class = "text-danger" })
@@ -52,10 +95,10 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" style="background-color:black; color:white;" value="ACTUALIZAR EMPLEADO" class="btn btn-default" />
+                <input type="submit" style="background-color:black; color:white;" value="ACTUALIZAR ROL DEL EMPLEADO" class="btn btn-default" />
             </div>
         </div>
-    </div>
+</div>
 }
 
 

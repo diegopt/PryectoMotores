@@ -248,6 +248,17 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\css\libs\bootstrap.min.css" />
+    <Content Include="Content\css\libs\bootstrap.min_1.css" />
+    <Content Include="Content\css\libs\brands.css" />
+    <Content Include="Content\css\libs\brands_1.css" />
+    <Content Include="Content\css\libs\font-awesome.css" />
+    <Content Include="Content\css\libs\font-awesome.min.css" />
+    <Content Include="Content\css\libs\font-awesome_1.css" />
+    <Content Include="Content\css\libs\jquery-ui.min.css" />
+    <Content Include="Content\css\libs\jquery.dataTables.min.css" />
+    <Content Include="Content\css\libs\solid.css" />
     <Content Include="Content\images\carrusel\carrusel1.jpg" />
     <Content Include="Content\images\carrusel\carrusel2.jpg" />
     <Content Include="Content\images\carrusel\carrusel3.jpg" />
@@ -266,6 +277,22 @@
     <Content Include="Content\images\motores\continua4.jpg" />
     <Content Include="Content\images\motores\continua5.jpg" />
     <Content Include="Content\images\motores\continua6.jpg" />
+    <Content Include="Content\js\generados\constantes.js" />
+    <Content Include="Content\js\generados\DataTableEmpleados.js" />
+    <Content Include="Content\js\generados\DataTableRoles.js" />
+    <Content Include="Content\js\generados\EventosAdministrador.js" />
+    <Content Include="Content\js\generados\funciones.js" />
+    <Content Include="Content\js\generados\ValidacionesAdministrador.js" />
+    <Content Include="Content\js\libs\bootbox.all.min.js" />
+    <Content Include="Content\js\libs\bootstrap.min.js" />
+    <Content Include="Content\js\libs\brands.js" />
+    <Content Include="Content\js\libs\datatables.min.js" />
+    <Content Include="Content\js\libs\fontawesome.js" />
+    <Content Include="Content\js\libs\jquery-3.3.1.min.js" />
+    <Content Include="Content\js\libs\jquery-3.4.1.min.js" />
+    <Content Include="Content\js\libs\jquery.dataTables.min.js" />
+    <Content Include="Content\js\libs\loadingoverlay.min.js" />
+    <Content Include="Content\js\libs\solid.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -289,6 +316,13 @@
     <Content Include="Models\contextoTienda.edmx.diagram">
       <DependentUpon>contextoTienda.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\css\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\css\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\css\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\css\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\css\fonts\FontAwesome.otf" />
+    <Content Include="Content\css\libs\bootstrap.min.css.map" />
+    <Content Include="Content\css\libs\bootstrap.min.css_1.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -395,9 +429,11 @@
     <Content Include="Views\paqueterias\Index.cshtml" />
     <Content Include="Views\Compras\Index.cshtml" />
     <Content Include="Views\clientes\Invalida.cshtml" />
+    <Content Include="Views\Administrador\Lista.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\css\generados\" />
     <Folder Include="Views\Pago\" />
     <Folder Include="Views\ProdCarro\" />
     <Folder Include="Views\Usuarios\" />

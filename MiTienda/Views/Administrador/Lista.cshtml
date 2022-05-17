@@ -1,0 +1,77 @@
+﻿@model IEnumerable<MiTienda.Models.Empleado>
+
+@{
+    ViewBag.Title = "Lista de Empleados";
+    Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
+}
+
+<div class="row">
+    <h2 class="col-md-10" style="text-align:left">Lista de Empleados</h2>
+
+
+    <a href="/Administrador/Create" class="btn col-md-2">
+        <button style="margin-top: 20px; font-size:25px; margin-bottom:10px; background-color:black; color:white; border-radius: 44px;">
+            <i class="fa fa-fw fa-user-plus"></i>
+        </button>
+    </a>
+
+</div>
+<table id="TablaEmpleados" class="table table-striped">
+    <thead>
+        <tr style="background-color: black; color:white">
+            <th width="5%">
+                Info
+            </th>
+            <th width="25%">
+                Nombre
+            </th>
+            <th width="25%">
+                Correo
+            </th>
+            <th width="25%">
+                Rol
+            </th>
+            <th width="20%">
+                Editar | Eliminar
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td align="center">
+                    <a href="/Administrador/Details/@item.id_emp">
+                        <button style="font-size:15px; background-color:black; color:white; border-radius: 44px;">
+                            <i class="fa fa-fw fa-info"></i>
+                        </button>
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.correo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Roles.nombre)
+                </td>
+                <td align="center">
+                    <div class="row">
+                        <a href="/Administrador/Edit/@item.id_emp">
+                            <button style="font-size:15px; background-color:black; color:white; border-radius: 44px;">
+                                <i class="fa fa-fw fa-edit"></i>
+                            </button>
+                        </a>
+                        <a href="/Administrador/Delete/@item.id_emp">
+                            <button style="font-size:15px; background-color:black; color:white; border-radius: 44px;">
+                                <i class="fa fa-fw fa-trash"></i>
+                            </button>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

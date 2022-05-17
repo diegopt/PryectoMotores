@@ -1,73 +1,13 @@
 ﻿@model IEnumerable<MiTienda.Models.Empleado>
 
 @{
-    ViewBag.Title = "Lista de Empleados";
+    ViewBag.Title = "Administrador de Empleados";
     Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
 }
-<div style="height: 150px; background-color:white"></div>
-<div class="row">
-    <h2 class="col-md-10" style="text-align:left">Lista de Empleados</h2>
 
-    
-        <a href="/Administrador/Create" class="btn col-md-2"> 
-            <button  style="margin-top: 20px; font-size:25px; margin-bottom:10px; background-color:black; color:white; border-radius: 44px;">
-                <i class="fa fa-fw fa-user-plus"></i>
-            </button>
-        </a>
-    
-</div>
-<table class="table table-striped" >
-    <tr style="background-color: black; color:white">
-        <th>
-            Info
-        </th>
-        <th>
-            Nombre
-        </th>
-        <th>
-           Correo
-        </th>
-        <th>
-           Rol
-        </th>
-        <th>
-            Editar | Eliminar
-        </th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            <a href="/Administrador/Details/@item.id_emp">
-                <button style="font-size:15px; background-color:black; color:white; border-radius: 44px;">
-                    <i class="fa fa-fw fa-info"></i>
-                </button>
-            </a>
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.correo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Roles.nombre)
-        </td>
-        <td>
-            <div class="row" style="padding-left:15px">
-                <a href="/Administrador/Edit/@item.id_emp">
-                    <button style="font-size:15px; background-color:black; color:white; border-radius: 44px;">
-                        <i class="fa fa-fw fa-edit"></i>
-                    </button>
-                </a>
-                <a href="/Administrador/Delete/@item.id_emp">
-                    <button style="font-size:15px; background-color:black; color:white; border-radius: 44px;">
-                        <i class="fa fa-fw fa-trash"></i>
-                    </button>
-                </a>
-            </div>
-        </td>
-    </tr>
-}
-
-</table>
+<h2 class="col-md-10" style="text-align:left">Bienvenido Jesús</h2>
+<hr/>
+<br />
+<br />
+<p style="font-size:23px">Aqui podrás adminitrar las cuentas de los empledos y los roles existentes dentro de la tienda, haz click en las opciones de la barra de navegacion para comenzar.</p>

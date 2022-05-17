@@ -16,6 +16,10 @@ namespace MiTienda.Models
         // GET: Administrador
         public ActionResult Index()
         {
+            return View();
+        }
+        public ActionResult Lista()
+        {
             var empleado = db.Empleado.Include(e => e.Roles);
             return View(empleado.ToList());
         }
@@ -53,7 +57,7 @@ namespace MiTienda.Models
             {
                 db.Empleado.Add(empleado);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Lista");
             }
 
             ViewBag.id_rol = new SelectList(db.Roles, "id_rol", "nombre", empleado.id_rol);
@@ -87,7 +91,7 @@ namespace MiTienda.Models
             {
                 db.Entry(empleado).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Lista");
             }
             ViewBag.id_rol = new SelectList(db.Roles, "id_rol", "nombre", empleado.id_rol);
             return View(empleado);
@@ -116,7 +120,7 @@ namespace MiTienda.Models
             Empleado empleado = db.Empleado.Find(id);
             db.Empleado.Remove(empleado);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Lista");
         }
 
         protected override void Dispose(bool disposing)

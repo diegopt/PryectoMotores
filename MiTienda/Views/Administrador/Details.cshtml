@@ -4,7 +4,7 @@
     ViewBag.Title = "Detalles del Empleado";
     Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
 }
-<div style="height: 150px; background-color:white"></div>
+
 <div class="row">
     <h2 class="col-md-10" style="text-align:left">Detalles del Empleado con ID @Model.id_emp</h2>
     <a href="/Administrador/Edit/@Model.id_emp" class="btn col-md-1" style="margin-top: 15px; margin-bottom:20px;">
@@ -12,7 +12,7 @@
             <i class="fa fa-fw fa-edit"></i>
         </button>
     </a>
-    <a href="/Administrador" class="btn col-md-1" style="margin-top: 15px; margin-bottom:20px;">
+    <a href="/Administrador/Lista" class="btn col-md-1" style="margin-top: 15px; margin-bottom:20px;">
         <button style="font-size:17px; background-color:black; color:white; border-radius: 44px;">
             <i class="fa fa-fw fa-arrow-left"></i>
         </button>

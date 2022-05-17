@@ -4,10 +4,9 @@
     ViewBag.Title = "Registrar Empleado";
     Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
 }
-<div style="height: 150px; background-color:white"></div>
 <div class="row">
     <h2 class="col-md-10" style="text-align:left">Registra un Nuevo Empleado</h2>
-    <a href="/Administrador" class="btn col-md-2" style="margin-top: 15px; margin-bottom:20px;">
+    <a href="/Administrador/Lista" class="btn col-md-2" style="margin-top: 15px; margin-bottom:20px;">
         <button style="font-size:17px; background-color:black; color:white; border-radius: 44px;">
             <i class="fa fa-fw fa-arrow-left"></i>
         </button>
@@ -18,7 +17,7 @@
 <br />
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "formEmp" }))
 {
     @Html.AntiForgeryToken()
 
@@ -26,32 +25,45 @@
 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.nombre,"Nombre del Empleado", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control", @id = "nombreEmpleado" } })
                 @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
+            </div>
+        </div>
+		
+		<div class="form-group" hidden>
+            @Html.LabelFor(model => model.contrasenia, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.contrasenia, new { htmlAttributes = new { @class = "form-control", @Value = "Contra.1234"} })
+                @Html.ValidationMessageFor(model => model.contrasenia, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.correo, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.correo, "Correo del Empleado", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.correo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.correo, new { htmlAttributes = new { @class = "form-control", @id = "correoEmpleado" } })
                 @Html.ValidationMessageFor(model => model.correo, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.id_rol, "id_rol", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.id_rol, "Rol del Empleado", htmlAttributes: new { @class = "control-label col-md-2"})
             <div class="col-md-10">
-                @Html.DropDownList("id_rol", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("id_rol", null, htmlAttributes: new { @class = "form-control", @id = "rolEmpleado" })
                 @Html.ValidationMessageFor(model => model.id_rol, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" style="background-color:black; color:white;" value="REGISTRAR EMPLEADO" class="btn btn-default" />
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <button style="background-color:black; color:white;" class="btn btn-default" id="btnGuardarEmpleado">REGISTRAR EMPLEADO</button>
+                </div>
+                <div class="col-md-2" hidden>
+                    <input type="submit" style="background-color:royalblue; color:white;" value="SUBMIT" class="btn btn-default" id="btnSubmitEmpleado" hidden />
+                </div>
             </div>
         </div>
     </div>

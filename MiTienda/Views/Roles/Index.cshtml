@@ -4,7 +4,7 @@
     ViewBag.Title = "Lista de Roles";
     Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
 }
-<div style="height: 150px; background-color:white"></div>
+
 
 <div class="row">
     <h2 class="col-md-10" style="text-align:left">Lista de Roles</h2>
@@ -16,53 +16,56 @@
     </a>
 
 </div>
-    <table class="table table-striped">
-        <tr style="background-color: black; color:white">
-            <th>
-                Info
-            </th>
-            <th>
-                Nombre
-            </th>
-            <th>
-                Descripción
-            </th>
-            <th>
-                Editar | Eliminar
-            </th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    <a href="/Roles/Details/@item.id_rol">
-                        <button style="font-size:15px; background-color:black; color:white; border-radius: 44px;">
-                            <i class="fa fa-fw fa-info"></i>
-                        </button>
-                    </a>
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.descripcion)
-                </td>
-                <td>
-                    <div class="row" style="padding-left:15px">
-                        <a href="/Roles/Edit/@item.id_rol">
-                            <button style="font-size:15px; background-color:black; color:white; border-radius: 44px;">
-                                <i class="fa fa-fw fa-edit"></i>
-                            </button>
-                        </a>
-                        <a href="/Roles/Delete/@item.id_rol">
-                            <button style="font-size:15px; background-color:black; color:white; border-radius: 44px;">
-                                <i class="fa fa-fw fa-trash"></i>
-                            </button>
-                        </a>
-                    </div>
-                </td>
+    <table id="TablaRoles" class="table table-striped">
+        <thead>
+            <tr style="background-color: black; color:white">
+                <th width="5%">
+                    Info
+                </th>
+                <th width="15%">
+                    Rol
+                </th>
+                <th width="65%">
+                    Descripción
+                </th>
+                <th width="15%">
+                    Editar | Eliminar
+                </th>
             </tr>
-        }
-
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td align="center">
+                        <a href="/Roles/Details/@item.id_rol">
+                            <button style="font-size:15px; background-color:black; color:white; border-radius: 44px;">
+                                <i class="fa fa-fw fa-info"></i>
+                            </button>
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.descripcion)
+                    </td>
+                    <td align="center">
+                        <div class="row" >
+                            <a href="/Roles/Edit/@item.id_rol">
+                                <button style="font-size:15px; background-color:black; color:white; border-radius: 44px;">
+                                    <i class="fa fa-fw fa-edit"></i>
+                                </button>
+                            </a>
+                            <a href="/Roles/Delete/@item.id_rol">
+                                <button style="font-size:15px; background-color:black; color:white; border-radius: 44px;">
+                                    <i class="fa fa-fw fa-trash"></i>
+                                </button>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
     </table>
+    

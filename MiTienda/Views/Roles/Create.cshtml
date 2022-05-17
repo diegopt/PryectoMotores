@@ -4,7 +4,7 @@
     ViewBag.Title = "Registrar Rol";
     Layout = "~/Views/Shared/_LayoutAdministrador.cshtml";
 }
-<div style="height: 150px; background-color:white"></div>
+
 <div class="row">
     <h2 class="col-md-10" style="text-align:left">Registra un Nuevo Rol</h2>
     <a href="/Roles" class="btn col-md-2" style="margin-top: 15px; margin-bottom:20px;">
@@ -17,52 +17,50 @@
 <h4>Por favor, Ingrese los siguientes datos del Nuevo Rol</h4>
 <br />
 
-@using (Html.BeginForm())
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "formRol" }))
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
+    <div class="form-horizontal"> 
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.id_rol, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.id_rol, "ID del Rol", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.id_rol, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.id_rol, new { htmlAttributes = new { @class = "form-control", @id = "idRol" } })
                 @Html.ValidationMessageFor(model => model.id_rol, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.nombre, "Nombre del Rol", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control", @id = "nombreRol" } })
                 @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.descripcion, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.descripcion, "Descripción del Rol", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.descripcion, new { htmlAttributes = new { @class = "form-control", @id = "descripcionRol" } })
                 @Html.ValidationMessageFor(model => model.descripcion, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" style="background-color:black; color:white;" value="REGISTRAR ROL" value="Create" class="btn btn-default" />
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <button style="background-color:black; color:white;" class="btn btn-default" id="btnGuardarRol">REGISTRAR ROL</button>
+                </div>
+                <div class="col-md-2" hidden>
+                    <input type="submit" style="background-color:royalblue; color:white;" value="SUBMIT" class="btn btn-default" id="btnSubmitRol" hidden />
+                </div>
             </div>
         </div>
+
     </div>
 }
 
-<br />
-<div class="row">
-    <a href="/Roles">
-        <button class="btn" style="font-size:15px; background-color:black; color:white">
-            Regresar a la Lista
-        </button>
-    </a>
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
