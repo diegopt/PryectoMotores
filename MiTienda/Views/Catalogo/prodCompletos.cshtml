@@ -31,7 +31,7 @@
             width: 300px;
         }
 
-        .product-container h1 {
+        .product-container h2 {
             margin-bottom: 10px;
             margin-left: 15px;
         }
@@ -63,12 +63,12 @@
 <div class="page-content">
     @foreach (productos item in ViewBag.productos)
     {
-        <div class="product-container">
-            <h3>@item.nombre</h3>
-            <img src="~/Content/images/motores/@item.imagen" />
-            <h1>$@item.precio</h1>
-            <button class="button-add">@Html.ActionLink("Agregar al carrito", "Agregar", "Carro", new { id = item.Id_producto }, null)</button>
-        </div>
+    <div class="product-container">
+        <h3>@item.nombre</h3>
+        <img src="~/Content/images/motores/@item.imagen" />
+        <h2>$@item.precio</h2>
+        <button class="button-add">@Html.ActionLink("Agregar al carrito", "Agregar", "Carro", new { id = item.Id_producto }, null)</button>
+    </div>
     }
 </div>
 
