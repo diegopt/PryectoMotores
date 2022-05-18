@@ -10,8 +10,8 @@ namespace MiTienda.Controllers
     {
         public ActionResult Index()
         {
-            //return View();
-            return RedirectToAction("Index", "Administrador");
+            return View();
+            //return RedirectToAction("Index", "Administrador");
         }
 
         public ActionResult About()

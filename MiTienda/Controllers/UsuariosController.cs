@@ -51,7 +51,7 @@ namespace MiTienda.Controllers
 
                 }
 
-                if (rol == "administrador")
+                if (rol == "admin")
                 {
                     return RedirectToAction("Index", "Administrador");
                 }
