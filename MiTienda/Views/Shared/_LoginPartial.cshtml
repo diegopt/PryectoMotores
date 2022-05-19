@@ -8,7 +8,7 @@
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
     {
         @Html.AntiForgeryToken()
-        string name = @Session["name"].ToString();
+        string name = Convert.ToString(Session["name"]);
 
         <ul class="nav navbar-nav navbar-right">
 

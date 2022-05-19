@@ -10,8 +10,9 @@ using MiTienda.Models;
 
 namespace MiTienda.Controllers
 {
+    [Authorize]
     public class clientesController : Controller
-    {
+    {      
         private contextoTienda db = new contextoTienda();
 
         // GET: clientes
@@ -75,7 +76,7 @@ namespace MiTienda.Controllers
                 cliente.nombre = nombre;
                 cliente.apellido_p = apellido_p;
                 cliente.apellido_m = apellido_m;
-                cliente.correo = Session["correo"].ToString();
+                cliente.correo = correo; // Session["correo"].ToString();
                 cliente.contraseña = contraseña;
                 cliente.fecha_nacimiento = fecha_nacimiento;
                 cliente.rfc = rfc;
