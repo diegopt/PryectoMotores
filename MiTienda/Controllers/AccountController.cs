@@ -82,7 +82,7 @@ namespace MiTienda.Controllers
                 case SignInStatus.Success:
                     {
                         string correo = model.Email;
-                        return RedirectToAction("Index", "Usuarios", routeValues: new { email = correo });
+                        return RedirectToAction("Index", "paqueterias", routeValues: new { email = correo });
                        // return RedirectToLocal(returnUrl);
                     }
                  

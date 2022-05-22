@@ -11,7 +11,6 @@ namespace MiTienda.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class clientes
     {
@@ -23,16 +22,12 @@ namespace MiTienda.Models
             this.ordenCliente = new HashSet<ordenCliente>();
         }
     
-        public int Id_cliente { get; set; }    
-        [Display(Name ="Nombre")]
+        public int Id_cliente { get; set; }
         public string nombre { get; set; }
-        [Display(Name = "Apellido Paterno")]
         public string apellido_p { get; set; }
-        [Display(Name = "Apellido Materno")]
         public string apellido_m { get; set; }
         public string correo { get; set; }
         public string contraseña { get; set; }
-        [Display(Name = "Fecha de Nacimiento")]
         public Nullable<System.DateTime> fecha_nacimiento { get; set; }
         public string rfc { get; set; }
         public Nullable<int> telefono { get; set; }

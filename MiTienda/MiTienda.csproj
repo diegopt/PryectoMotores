@@ -395,6 +395,7 @@
     <Content Include="Views\paqueterias\Index.cshtml" />
     <Content Include="Views\Compras\Index.cshtml" />
     <Content Include="Views\clientes\Invalida.cshtml" />
+    <Content Include="Views\ordenCliente\Index1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

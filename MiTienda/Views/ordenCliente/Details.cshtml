@@ -2,98 +2,100 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAlmacen.cshtml";
 }
 
-<h2>Details</h2>
+<div class="jumbotron">
+    <div>
+        <h1>Detalles de la Orden</h1>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.fecha_creacion)
+            </dt>
 
-<div>
-    <h4>ordenCliente</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.fecha_creacion)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.fecha_creacion)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.fecha_creacion)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.num_confirmacion)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.num_confirmacion)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.num_confirmacion)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.num_confirmacion)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.total)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.total)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.total)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.total)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.num_guia)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.num_guia)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.num_guia)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.num_guia)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.fecha_envio)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.fecha_envio)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.fecha_envio)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.fecha_envio)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.fecha_entrega)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.fecha_entrega)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.fecha_entrega)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.fecha_entrega)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.clientes.nombre)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.clientes.nombre)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.clientes.nombre)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.clientes.nombre)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.datosEnvio.calle)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.datosEnvio.calle)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.datosEnvio.calle)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.datosEnvio.calle)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.paqueterias.nombre)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.paqueterias.nombre)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.paqueterias.nombre)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.paqueterias.nombre)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.ordenProducto.Id_ordenCliente)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ordenProducto.Id_ordenCliente)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.ordenProducto.Id_ordenCliente)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.ordenProducto.Id_ordenCliente)
-        </dd>
-
-    </dl>
+        </dl>
+    </div>
 </div>
+
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_ordenCliente }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id_ordenCliente }) |
+    @Html.ActionLink("Regresar", "Index")
 </p>

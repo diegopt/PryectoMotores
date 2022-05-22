@@ -21,6 +21,12 @@ namespace MiTienda.Controllers
             return View(ordenCliente.ToList());
         }
 
+        public ActionResult Index1()
+        {
+            var ordenCliente = db.ordenCliente.Include(o => o.clientes).Include(o => o.datosEnvio).Include(o => o.paqueterias).Include(o => o.ordenProducto);
+            return View(ordenCliente.ToList());
+        }
+
         // GET: ordenCliente/Details/5
         public ActionResult Details(int? id)
         {
@@ -86,23 +92,62 @@ namespace MiTienda.Controllers
             return View(ordenCliente);
         }
 
-        // POST: ordenCliente/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id_ordenCliente,fecha_creacion,num_confirmacion,total,num_guia,fecha_envio,fecha_entrega,id_cliente,id_datosEnvio,id_paqueteria")] ordenCliente ordenCliente)
+        // GET: ordenCliente/Edit/5
+        public ActionResult Edit1(int? id)
         {
-            if (ModelState.IsValid)
+            if (id == null)
             {
-                db.Entry(ordenCliente).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ordenCliente ordenCliente = db.ordenCliente.Find(id);
+            if (ordenCliente == null)
+            {
+                return HttpNotFound();
             }
             ViewBag.id_cliente = new SelectList(db.clientes, "Id_cliente", "nombre", ordenCliente.id_cliente);
             ViewBag.id_datosEnvio = new SelectList(db.datosEnvio, "Id_datosEnvio", "calle", ordenCliente.id_datosEnvio);
             ViewBag.id_paqueteria = new SelectList(db.paqueterias, "Id_paqueteria", "nombre", ordenCliente.id_paqueteria);
             ViewBag.Id_ordenCliente = new SelectList(db.ordenProducto, "Id_ordenCliente", "Id_ordenCliente", ordenCliente.Id_ordenCliente);
+            return View(ordenCliente);
+        }
+
+        // POST: ordenCliente/Edit/5
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id_ordenCliente,num_guia,fecha_envio,id_paqueteria")] ordenCliente ordenCliente)
+        {
+            if (ModelState.IsValid)
+            {
+                ordenCliente o = db.ordenCliente.Find(ordenCliente.Id_ordenCliente);
+                o.id_paqueteria = ordenCliente.id_paqueteria;
+                o.num_guia = ordenCliente.num_guia;
+                o.fecha_envio = ordenCliente.fecha_envio;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.id_cliente = new SelectList(db.clientes, "Id_cliente", "nombre", ordenCliente.id_cliente);
+            ViewBag.id_paqueteria = new SelectList(db.paqueterias, "Id_paqueteria", "nombre", ordenCliente.id_paqueteria);
+            return View(ordenCliente);
+        }
+
+        // POST: ordenCliente/Edit/5
+        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
+        // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit1([Bind(Include = "Id_ordenCliente,fecha_entrega,id_paqueteria")] ordenCliente ordenCliente)
+        {
+            if (ModelState.IsValid)
+            {
+                ordenCliente o = db.ordenCliente.Find(ordenCliente.Id_ordenCliente);
+                o.fecha_entrega = ordenCliente.fecha_entrega;
+                db.SaveChanges();
+                return RedirectToAction("Index1");
+            }
+            ViewBag.id_cliente = new SelectList(db.clientes, "Id_cliente", "nombre", ordenCliente.id_cliente);
+            ViewBag.id_paqueteria = new SelectList(db.paqueterias, "Id_paqueteria", "nombre", ordenCliente.id_paqueteria);
             return View(ordenCliente);
         }
 

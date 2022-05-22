@@ -2,66 +2,66 @@
 
 @{
     ViewBag.Title = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAlmacen.cshtml";
 }
 
-<h2>Details</h2>
+<div class="jumbotron">
+    <div>
+        <h1>Detalles de la Paqueteria</h1>
+        <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.nombre)
+                </dt>
 
-<div>
-    <h4>paqueterias</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.nombre)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.nombre)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.nombre)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.rfc)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.rfc)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.rfc)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.rfc)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.telefono)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.telefono)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.telefono)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.telefono)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.web)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.web)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.web)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.web)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.direccion)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.direccion)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.direccion)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.direccion)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.telContacto)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.telContacto)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.telContacto)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.telContacto)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id_paqueteria }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            </dl>
+        </div>
+    </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id_paqueteria }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>

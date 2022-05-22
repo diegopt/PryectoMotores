@@ -81,18 +81,9 @@
 
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" role="button" aria-expanded="false" hef="#" data-toggle="dropdown">Categorías<span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>@Html.ActionLink("Corriente Alterna", "prodCategoria", "Catalogo", new { idCat = 1 }, null)</li>
-                            <li>@Html.ActionLink("Corriente Continua", "prodCategoria", "Catalogo", new { idCat = 2 }, null)</li>
-                        </ul>
-                    </li>
-                    <li>@Html.ActionLink("Productos", "prodCompletos", "Catalogo")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Inicio", "Index", "paqueterias")</li>
+                    <li>@Html.ActionLink("Pedidos Pendientes", "Index", "OrdenCliente")</li>
+                    <li>@Html.ActionLink("Pedidos por Registrar", "Index1", "OrdenCliente")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -100,7 +91,7 @@
         </div>
     </div>
 
-    <div class="container body-content">
+    <div class="container body-content" style="margin-top: 150px;">
         @RenderBody()
         <hr />
         <footer>
